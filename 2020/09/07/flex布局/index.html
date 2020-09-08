@@ -1,38 +1,1458 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE HTML>
+<html lang="zh-CN">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Hexo">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-{% block page_class %}page-post-detail{% endblock %}
+
+    <title>Hexo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
-{% block content %}
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Hexo</span>
+                </a>
+            </div>
+            
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hexo</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
     </div>
-  </div>
 
-{% endblock %}
+    
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
 
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-09-07
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在项目中，遇到布局问题，有时候，需要堆叠很多的样式，去排版，一定程度上增加了代码量，那么有没有更加方便的布局方式呢？👇</p>
+<p>48张图带你从0到1掌握flex布局方式。</p>
+<p><code>flex布局</code>在某种程度上，简便我们布局的一个难题，接下来的篇幅将介绍它的使用👇</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cad4dc9d88834a8e831c03de2b9e624c~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>需要本文的Xmind导图的话，移步公众号–<strong>前端UpUp</strong>,回复<code>flex</code>关键字即可。</p>
+<h2 id="flex基本概念"><a href="#flex基本概念" class="headerlink" title="flex基本概念"></a>flex基本概念</h2><p>要想熟练掌握flex布局的话，你需要理解两个概念：<code>轴</code>和<code>容器</code>👇</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ae5302cb1c4488af8e011bcdb9a64b~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>从上面图来看，我们将flex布局分为两部分讲，<code>轴</code>和<code>容器</code>。</p>
+<p><strong>轴</strong></p>
+<ul>
+<li>主轴（mian axis）</li>
+<li>交叉轴（cross axis）</li>
+</ul>
+<p><strong>容器</strong></p>
+<ul>
+<li>父容器（container)</li>
+<li>子容器（item）</li>
+</ul>
+<p>打个预防针，<code>flex布局</code>涉及到12个CSS属性，父容器,子容器各6个。</p>
+<p>接下来先梳理常见的属性，不常见的放在进阶部分来梳理。</p>
+<h3 id="轴"><a href="#轴" class="headerlink" title="轴"></a>轴</h3><p>我们知道，<code>轴</code>包括<code>主轴</code>和<code>交叉轴</code>,那么它们的方向是如何决定呢？我们直接从一张图看懂它👇</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8563c81d90394784b32c023b725f454c~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>默认情况下，<strong>主轴</strong>的方向是从左向右的，<strong>交叉轴</strong>垂直于主轴，逆时针方向90度，那么接下来我们看<strong>flex-direction</strong>是如何决定主轴的。讲这个之前，我们需要明白👇</p>
+<ul>
+<li><p>交叉轴是由主轴决定的，主轴又是由flex-direction决定的。</p>
+</li>
+<li><p>flex-direction属性设置在父容器上，这样子才可以生效。</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-direction: row | row-reverse | column | column-reverse</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/47eeb569967e4c2eb64c2b539f8b35ee~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>首先布局如下👇</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;flex1&quot;</span>&gt;</span>子盒子#flex1: 1 <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;flex2&quot;</span>&gt;</span>子盒子#flex2: 1 <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>接下来，我们看看他们的效果吧👇</p>
+<hr>
+<h4 id="flex-direction-row"><a href="#flex-direction-row" class="headerlink" title="flex-direction: row"></a>flex-direction: row</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">flex-direction: row</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/63c8d0fdfb00435c8c25c0eb0c4b8d8e~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><strong>结论</strong></p>
+<ul>
+<li>flex容器的主轴被定义为与文本方向相同。 主轴起点和主轴终点与内容方向相同。</li>
+<li>简单理解就是<strong>主轴沿着水平方向向右</strong></li>
+</ul>
+<hr>
+<h4 id="flex-direction-row-reverse"><a href="#flex-direction-row-reverse" class="headerlink" title="flex-direction: row-reverse"></a>flex-direction: row-reverse</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">flex-direction: row-reverse</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8f20b904b939419aafd9060969262108~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>我们可以看到这两个盒子的位置发生了变化，这个就是主轴起点和主轴终点位置<strong>置换</strong>的原因。</p>
+<p><strong>结论</strong></p>
+<ul>
+<li>表现和row相同，但是置换了主轴起点和主轴终点。</li>
+<li>简单理解就是<strong>主轴沿着水平方向向左</strong>，与文本方向相反。</li>
+</ul>
+<hr>
+<h4 id="flex-direction-column"><a href="#flex-direction-column" class="headerlink" title="flex-direction: column"></a>flex-direction: column</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">flex-direction: column</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/263bf603893b49da987fbfdda7e61e5d~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>可以看到，子盒子的布局发生了变化，形成了在Y轴上的布局方式,并且书写方式跟布局一样。</p>
+<p><strong>结论</strong></p>
+<ul>
+<li>flex容器的主轴和块轴相同。主轴起点与主轴终点和书写模式的前后点相同</li>
+<li>简单的理解，就是主轴变成Y轴方向，方向从上到下布局。</li>
+</ul>
+<hr>
+<h4 id="flex-direction-column-reverse"><a href="#flex-direction-column-reverse" class="headerlink" title="flex-direction: column-reverse"></a>flex-direction: column-reverse</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">flex-direction: column-reverse</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/76432fefc1b449fb81dc3f257788b1cd~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>可以看到，子盒子的布局跟column差不多，唯一不同的是，方向上发生了变化。</p>
+<p><strong>结论</strong></p>
+<ul>
+<li>表现和<code>column</code>相同，但是置换了主轴起点和主轴终点</li>
+<li>简单的理解，就是主轴变成Y轴方向，方向从下到上，与书写的方向相反。</li>
+</ul>
+<hr>
+<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><p>这里就分为<strong>父容器</strong>和<strong>子容器</strong>，我们先来看看父容器👇</p>
+<h4 id="父容器"><a href="#父容器" class="headerlink" title="父容器"></a>父容器</h4><ul>
+<li>justify-content: <strong>设置子元素在主轴方向上的对齐方式</strong></li>
+<li>align-items： <strong>设置子元素在交叉轴方向上的对齐方式</strong></li>
+</ul>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b1bdef0b27d4256a91c3e72bbc83fce~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<h4 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h4><p>这个属性设置在父容器上，<strong>决定子元素在主轴方向上的对齐方式</strong>，我们看看它们具体表现吧👇</p>
+<hr>
+<h4 id="justify-content-flex-start"><a href="#justify-content-flex-start" class="headerlink" title="justify-content: flex-start"></a>justify-content: flex-start</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">justify-content: flex-start</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5ec9455f3adf4e82b9db1afb15d23a02~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><strong>结论</strong>，子元素沿着主轴方向开始对齐。</p>
+<hr>
+<h4 id="justify-content-flex-end"><a href="#justify-content-flex-end" class="headerlink" title="justify-content: flex-end"></a>justify-content: flex-end</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">justify-content: flex-end</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c9a466a6f5a64a77ac6478ae6c804d73~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><strong>结论</strong>，子元素沿着主轴方向终点对齐。</p>
+<hr>
+<h4 id="justify-content-center"><a href="#justify-content-center" class="headerlink" title="justify-content: center"></a>justify-content: center</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">justify-content: center</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/35b82988c18c49ebbf5cbde7f1d86f60~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><strong>结论</strong>，子元素在主轴方向上水平居中。</p>
+<hr>
+<h4 id="justify-content-space-between"><a href="#justify-content-space-between" class="headerlink" title="justify-content: space-between"></a>justify-content: space-between</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">justify-content: space-between</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d75e64a2ddfb43b5b5728f65a81f34e2~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><strong>结论</strong>，子元素在主轴方向上<strong>两端对齐，项目之间间隔相等</strong>。</p>
+<hr>
+<h4 id="justify-content-space-around"><a href="#justify-content-space-around" class="headerlink" title="justify-content: space-around"></a>justify-content: space-around</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">justify-content: space-around</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5c605040c45343a78b6596051d61e228~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><strong>结论</strong>，子元素在主轴方向上<strong>均匀排列每个元素，每个元素周围分配相同的空间</strong>。</p>
+<hr>
+<h4 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h4><p>这个属性设置在父容器上，<strong>决定子元素在交叉轴方向上的对齐方式</strong>，我们看看它们具体表现吧👇</p>
+<hr>
+<h4 id="align-items-flex-start"><a href="#align-items-flex-start" class="headerlink" title="align-items: flex-start"></a>align-items: flex-start</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">align-items: flex-start</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dcc92ecd68c34b0fb3ea75e2ff0b912b~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><strong>结论</strong>，子元素在交叉轴方向上起点对齐。</p>
+<hr>
+<h4 id="align-items-flex-end"><a href="#align-items-flex-end" class="headerlink" title="align-items: flex-end"></a>align-items: flex-end</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">align-items: flex-end</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a50fe990f88341d0a85b823b9ff3fb44~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><strong>结论</strong>，子元素在交叉轴方向上终点对齐。</p>
+<hr>
+<h4 id="align-items-center"><a href="#align-items-center" class="headerlink" title="align-items: center"></a>align-items: center</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">align-items: center</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/00f3b616efd946a5bffa5ffda877a78b~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><strong>结论</strong>，子元素在交叉轴方向上居中对齐。</p>
+<hr>
+<h4 id="align-items-baseline"><a href="#align-items-baseline" class="headerlink" title="align-items: baseline"></a>align-items: baseline</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">align-items: baseline</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7bfe338236564e179134b7e961505951~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><strong>结论</strong>，子元素在交叉轴方向上以文字基线对齐，具体不清楚的，可以自行百度。</p>
+<hr>
+<h4 id="align-items-stretch"><a href="#align-items-stretch" class="headerlink" title="align-items: stretch"></a>align-items: stretch</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当你给父盒子(wrapper)设置属性</span><br><span class="line">align-items: stretch</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e641e25027ad41ec806f37756c0468d3~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><strong>结论</strong>，这个属性是默认的，如果项目未设置高度或者设为 auto，将占满整个容器的高度。</p>
+<hr>
+<h4 id="子容器"><a href="#子容器" class="headerlink" title="子容器"></a>子容器</h4><p>先看张图片</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3d534c220aa642b7a60e67c9b8f19acd~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>子容器的话，这里就介绍两个属性👇</p>
+<ul>
+<li><code>flex</code>属性 定义在主轴是如何伸缩的<ul>
+<li>子容器是有弹性的，它们会自动填充剩余空间，子容器的伸缩比由<code>flex</code>属性决定。</li>
+<li>flex是多个属性的缩写，允许1-3个值的连写，具体参考上面的图。</li>
+</ul>
+</li>
+<li><code>align-self</code>属性 <strong>单独设置子容器如何沿交叉轴排列</strong><ul>
+<li>每个子容器都可以单独定义沿交叉轴排列方式。</li>
+<li>该属性的取值跟父容器中的align-items属性一致，如果两者相同的话，则以子容器<code>align-self</code>属性为主。</li>
+</ul>
+</li>
+</ul>
+<h4 id="flex作用规则"><a href="#flex作用规则" class="headerlink" title="flex作用规则"></a>flex作用规则</h4><ul>
+<li>三个属性的简写，是flex-grow flex-shrink flex-basis的简写</li>
+<li>常用简化写法👇<ul>
+<li>flex:1 —&gt; flex:1 1 0%;</li>
+<li>flex:3 —&gt; flex:3 1 0%;</li>
+<li>注意:flexbox布局和原来的布局是两个概念，部分css属性在flexbox盒子里面不起作用，eg：float， clear， column,vertical-align 等等</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">注意👉flex-grow  flex-shrink flex-basis 这三个属性会在后续介绍</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>具体的flex取值问题，可以参照下面的图👇</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7d9db21dde9249ecbaa9204fd2397e4e~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<h4 id="align-self作用规则"><a href="#align-self作用规则" class="headerlink" title="align-self作用规则"></a><strong>align-self作用规则</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 起始端对齐</span><br><span class="line">align-self : flex-start;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/aa6a46b24f2b45d3ac93f9a9fffad31e~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 末尾段对齐</span><br><span class="line">align-self : flex-end;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e986cd6721f0486aaeb54ffe2dc93591~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">基线对齐&#x2F;&#x2F; 末尾段对齐</span><br><span class="line">align-self : baseline;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5442ea2af1804d82a9cb9c977008ef0c~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>可以看到的话，它们对齐的方式是第一行文字的基线。</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">拉伸对齐</span><br><span class="line">align-self : stretch;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bc1e80a04f504faa9b066974baea3972~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<h2 id="flex更深入了解"><a href="#flex更深入了解" class="headerlink" title="flex更深入了解"></a>flex更深入了解</h2><p>上面介绍的常见几个属性掌握的话，基本上可以满足日常的开发布局需求，剩下的一些属性，接下来将梳理一遍，这样子的话，早日成为<code>flex布局进阶者</code>。</p>
+<h3 id="父容器-1"><a href="#父容器-1" class="headerlink" title="父容器"></a>父容器</h3><ul>
+<li><p><strong>flex-wrap</strong> 设置换行方式</p>
+<ul>
+<li>绝对子容器是否可以选择换行，一般而言有三种状态，支持换行的话，也支持逆序换行。</li>
+</ul>
+</li>
+<li><p><strong>flex-flow</strong> 设置轴向与换行组合</p>
+<ul>
+<li>是 flex-direction 和 flex-wrap 的简写。</li>
+<li>所以只要掌握，<code>flex-direction</code> 和 <code>flex-wrap</code>即可。</li>
+</ul>
+</li>
+<li><p><strong>align-content</strong> 多行沿交叉轴对齐方式</p>
+<ul>
+<li>当子容器多行排列时，设置行与行之间的对齐方式。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h4><p>设置子容器的换行方式，通常有三个取值👇</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flex-wrap: wrap | nowrap | wrap-reverse</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>三种情况👇</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 允许换行</span><br><span class="line">flex-wrap : wrap</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/06dd94f540de40faaaa41b5fea90a989~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 不允许换行</span><br><span class="line">flex-wrap : nowrap</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7d07888feba24c06a1b9c6cec1ab364b~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 允许逆向换行</span><br><span class="line">flex-wrap : wrap-reverse</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/93dcac99b7a742309d55b831f1e8ecfd~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<h4 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h4><p>先来一张图👇</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bee4c1a1e2aa4939aaec1168df9df15d~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p><code>更多取值信息请查看</code> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/CSS/flex-direction"><code>flex-direction</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/CSS/flex-wrap"><code>flex-wrap</code></a></p>
+<p>可以查看MDN上，或者把之前的<code>flex-direction</code> 和 <code>flex-wrap</code> 两者取值看过一遍，那么使用这个属性就没有问题啦，这里也就不过多的举例子了，取值有三种情况👇</p>
+<ul>
+<li><p>单独设置flex-direction取值，比如</p>
+<ul>
+<li><pre><code class="css">flex-flow: row | column
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">*   单独设置flex-wrap取值</span><br><span class="line">    </span><br><span class="line">    *   &#96;&#96;&#96;css</span><br><span class="line">        flex-flow: wrap | nowrap | wrap-reverse</span><br></pre></td></tr></table></figure></code></pre>
+</li>
+</ul>
+</li>
+<li><p>同时设置两者取值</p>
+<ul>
+<li><pre><code class="css">flex-flow: row wrap
+flex-flow: column nowrap
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">        </span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br><span class="line">#### align-content</span><br><span class="line"></span><br><span class="line">这个属性是定义子容器在交叉轴的排列方式，也就是对齐方式。</span><br><span class="line"></span><br><span class="line">首先上一张图👇</span><br><span class="line"></span><br><span class="line">![](https:&#x2F;&#x2F;p3-juejin.byteimg.com&#x2F;tos-cn-i-k3u1fbpfcp&#x2F;e94951ca10cd4dc8bf74069ac13d6966~tplv-k3u1fbpfcp-zoom-1.image)</span><br><span class="line"></span><br><span class="line">根据这些取值，我们来看看布局效果吧👇</span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+// 起始端对齐
+align-content: flex-start
+复制代码
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">效果👇</span><br><span class="line"></span><br><span class="line">![](https:&#x2F;&#x2F;p3-juejin.byteimg.com&#x2F;tos-cn-i-k3u1fbpfcp&#x2F;b00aaeb582d3474e838db709ec66c3a8~tplv-k3u1fbpfcp-zoom-1.image)</span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+// 末尾段对齐
+align-content: flex-end
+复制代码
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">效果👇</span><br><span class="line"></span><br><span class="line">![](https:&#x2F;&#x2F;p6-juejin.byteimg.com&#x2F;tos-cn-i-k3u1fbpfcp&#x2F;ab3d9265288840fdb83e79f544a15d97~tplv-k3u1fbpfcp-zoom-1.image)</span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+// 居中对齐
+align-content: center
+复制代码
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">效果👇</span><br><span class="line"></span><br><span class="line">![](https:&#x2F;&#x2F;p9-juejin.byteimg.com&#x2F;tos-cn-i-k3u1fbpfcp&#x2F;023e04770fc54d7a93a5473fc2dbbd1e~tplv-k3u1fbpfcp-zoom-1.image)</span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;css</span><br><span class="line">&#x2F;&#x2F; 等间距均匀分布</span><br><span class="line">align-content: space-between</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>效果👇</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/145a1df4a0ca4a13b7320b762bf01a33~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 等边距均匀分布</span><br><span class="line"><span class="selector-tag">align-content</span>: <span class="selector-tag">space-around</span></span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/666d82d1ba6142599a534f47c45e99ba~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 拉伸对齐</span><br><span class="line"><span class="selector-tag">align-content</span>: <span class="selector-tag">stretch</span></span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7fded204fd3e42babecb11f16eb51480~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 基线对齐</span><br><span class="line"><span class="selector-tag">align-content</span>: <span class="selector-tag">baseline</span></span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8a8fda3bbdd140cdad6ee1cd6977bf76~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<h3 id="子容器-1"><a href="#子容器-1" class="headerlink" title="子容器"></a>子容器</h3><ul>
+<li><p><strong>flex-grow</strong> 设置扩展比例</p>
+</li>
+<li><p><strong>flex-shrink</strong> 设置收缩比例</p>
+</li>
+<li><p><strong>flex-basis</strong> 设置基准大小</p>
+</li>
+<li><p><strong>order</strong> 设置排列顺序</p>
+</li>
+</ul>
+<hr>
+<h4 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h4><p>子容器弹性伸展的比例，简单理解，就是把剩余的空间按比例分配给子容器。</p>
+<p>我们看个例子</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8a4012640173402682c321785435b058~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<h4 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h4><p>子容器弹性收缩的比例。简单理解，就是当你子容器超出的部分，会按照对应的比例给子容器减去对应的值。</p>
+<p>我们来看下效果👇</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/25a4c764286f4d41b9d7610764379c4b~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>当取值为0时，就会溢出，那么我们给它们设置一个值👇</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8f15ec185cdb4910a882c2fd6863aee4~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>这样子的超出的部分就会按照比列减去。</p>
+<hr>
+<h4 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h4><p>有几个点需要注意的是👇</p>
+<ul>
+<li><p>在不伸缩的情况下，<code>flex-basis</code>给子容器设置大小才有作用。</p>
+</li>
+<li><p>当主轴为横向时，即👇</p>
+<ul>
+<li><pre><code>flex-direction：row | row-reverse
+复制代码
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">        </span><br><span class="line">    *   &#96;flex-basis&#96;设置的大小为宽度，并且会覆盖witdh值</span><br><span class="line">    </span><br><span class="line">*   当主轴为纵向时，即👇</span><br><span class="line">    </span><br><span class="line">    *   &#96;&#96;&#96;css</span><br><span class="line">        flex-direction：column | column-reverse</span><br></pre></td></tr></table></figure></code></pre>
+</li>
+<li><p><code>flex-basis</code>设置的大小为高度，并且会覆盖height值</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>我们来看看两种情况👇</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当主轴为横向时</span><br><span class="line">flex-direction：row | row-reverse</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ef58a221bff243f48efdf0df099bd95b~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当主轴为纵向时</span><br><span class="line">flex-direction：column | column-reverse</span><br></pre></td></tr></table></figure>
+
+<p>效果👇</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/04b4154eee254445a2b8b32d90983d80~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<h4 id="order"><a href="#order" class="headerlink" title="order"></a>order</h4><ul>
+<li>每个子容器的<code>order</code>属性默认为0</li>
+<li>通过设置<code>order</code>属性值，改变子容器的排列顺序。</li>
+<li>可以是负值，数值越小的话，排的越靠前。</li>
+</ul>
+<p>直接看效果图👇</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a4c34d31c8fe4273b0905933fd3f3291~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个时候，是不是需要总结一下呢👇</p>
+<p>先看看子容器属性👇</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c5e529f03d345dab4534bf84b1cfd1d~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<hr>
+<p>再看看父容器属性👇</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e2e9733b84e040f296f827ff4148f235~tplv-k3u1fbpfcp-zoom-1.image"></p>
+<p>梳理的是常见的属性值，对于一些不常见的属性值，请<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Flex">移步MDN</a></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">John Doe</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://jiejieg.github.io/2020/09/07/flex%E5%B8%83%E5%B1%80/">https://jiejieg.github.io/2020/09/07/flex%E5%B8%83%E5%B1%80/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">John Doe</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/09/07/JavaScripts%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            JavaScripts运行机制大纲
+区分进程和线程
+
+浏览器是多进程的
+
+浏览器都包含哪些进程？
+
+浏览器多进程的优势
+
+重点是浏览器内核（渲染进程）
+
+Browser进程和浏览器内核（Renderer进程）的通信过程
+
+
+
+梳理浏览器内核
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/09/07/flex%E5%B8%83%E5%B1%80/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            前言最近在项目中，遇到布局问题，有时候，需要堆叠很多的样式，去排版，一定程度上增加了代码量，那么有没有更加方便的布局方式呢？👇
+48张图带你从0到1掌握flex布局方式。
+flex布局在某种程度上，简便我们布局的一个难题，接下来的篇幅将介
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">John Doe</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

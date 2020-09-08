@@ -1,38 +1,1508 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE HTML>
+<html lang="zh-CN">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Hexo">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-{% block page_class %}page-post-detail{% endblock %}
+
+    <title>Hexo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.1.1"></head>
 
 
-{% block content %}
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Hexo</span>
+                </a>
+            </div>
+            
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hexo</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
     </div>
-  </div>
 
-{% endblock %}
+    
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
 
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-09-07
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="史上最强vue总结-万字长文—面试开发全靠它了"><a href="#史上最强vue总结-万字长文—面试开发全靠它了" class="headerlink" title="史上最强vue总结~万字长文—面试开发全靠它了"></a>史上最强vue总结~万字长文—面试开发全靠它了</h1><h2 id="vue框架篇"><a href="#vue框架篇" class="headerlink" title="vue框架篇"></a>vue框架篇</h2><h3 id="vue的优点"><a href="#vue的优点" class="headerlink" title="vue的优点"></a>vue的优点</h3><p>轻量级框架：只关注视图层，是一个构建数据的视图集合，大小只有几十kb；</p>
+<p>简单易学：国人开发，中文文档，不存在语言障碍 ，易于理解和学习；</p>
+<p>双向数据绑定：保留了angular的特点，在数据操作方面更为简单；</p>
+<p>组件化：保留了react的优点，实现了html的封装和重用，在构建单页面应用方面有着独特的优势；</p>
+<p>视图，数据，结构分离：使数据的更改更为简单，不需要进行逻辑代码的修改，只需要操作数据就能完成相关操作；</p>
+<p>虚拟DOM：dom操作是非常耗费性能的，不再使用原生的dom操作节点，极大解放dom操作，但具体操作的还是dom不过是换了另一种方式；</p>
+<p>运行速度更快:相比较与react而言，同样是操作虚拟dom，就性能而言，vue存在很大的优势。</p>
+<h3 id="请详细说下你对vue生命周期的理解？"><a href="#请详细说下你对vue生命周期的理解？" class="headerlink" title="请详细说下你对vue生命周期的理解？"></a>请详细说下你对vue生命周期的理解？</h3><p>总共分为8个阶段创建前/后，载入前/后，更新前/后，销毁前/后。</p>
+<blockquote>
+<p>创建前/后： 在beforeCreate阶段，vue实例的挂载元素el和数据对象data都为undefined，还未初始化。在created阶段，vue实例的数据对象data有了，el为undefined，还未初始化。</p>
+</blockquote>
+<blockquote>
+<p>载入前/后：在beforeMount阶段，vue实例的$el和data都初始化了，但还是挂载之前为虚拟的dom节点，data.message还未替换。在mounted阶段，vue实例挂载完成，data.message成功渲染。</p>
+</blockquote>
+<blockquote>
+<p>更新前/后：当data变化时，会触发beforeUpdate和updated方法</p>
+</blockquote>
+<blockquote>
+<p>销毁前/后：在执行destroy方法后，对data的改变不会再触发周期函数，说明此时vue实例已经解除了事件监听以及和dom的绑定，但是dom结构依然存在</p>
+</blockquote>
+<h3 id="为什么vue组件中data必须是一个函数？"><a href="#为什么vue组件中data必须是一个函数？" class="headerlink" title="为什么vue组件中data必须是一个函数？"></a>为什么vue组件中data必须是一个函数？</h3><p>对象为引用类型，当复用组件时，由于数据对象都指向同一个data对象，当在一个组件中修改data时，其他重用的组件中的data会同时被修改；而使用返回对象的函数，由于每次返回的都是一个新对象（Object的实例），引用地址不同，则不会出现这个问题。</p>
+<h3 id="vue中v-if和v-show有什么区别？"><a href="#vue中v-if和v-show有什么区别？" class="headerlink" title="vue中v-if和v-show有什么区别？"></a>vue中v-if和v-show有什么区别？</h3><p>v-if和v-show看起来似乎差不多，当条件不成立时，其所对应的标签元素都不可见，但是这两个选项是有区别的:</p>
+<p>1、v-if在条件切换时，会对标签进行适当的创建和销毁，而v-show则仅在初始化时加载一次，因此v-if的开销相对来说会比v-show大。</p>
+<p>2、v-if是惰性的，只有当条件为真时才会真正渲染标签；如果初始条件不为真，则v-if不会去渲染标签。v-show则无论初始条件是否成立，都会渲染标签，它仅仅做的只是简单的CSS切换。</p>
+<h3 id="computed和watch的区别"><a href="#computed和watch的区别" class="headerlink" title="computed和watch的区别"></a>computed和watch的区别</h3><h4 id="计算属性computed："><a href="#计算属性computed：" class="headerlink" title="计算属性computed："></a>计算属性computed：</h4><ul>
+<li><p>支持缓存，只有依赖数据发生改变，才会重新进行计算</p>
+</li>
+<li><p>不支持异步，当computed内有异步操作时无效，无法监听数据的变化</p>
+</li>
+<li><p>computed 属性值会默认走缓存，计算属性是基于它们的响应式依赖进行缓存的，也就是基于data中声明过或者父组件传递的props中的数据通过计算得到的值</p>
+</li>
+<li><p>如果一个属性是由其他属性计算而来的，这个属性依赖其他属性，是一个多对一或者一对一，一般用computed</p>
+</li>
+<li><p>如果computed属性属性值是函数，那么默认会走get方法；函数的返回值就是属性的属性值；在computed中的，属性都有一个get和一个set方法，当数据变化时，调用set方法。</p>
+</li>
+</ul>
+<h4 id="侦听属性watch："><a href="#侦听属性watch：" class="headerlink" title="侦听属性watch："></a>侦听属性watch：</h4><ul>
+<li><p>不支持缓存，数据变，直接会触发相应的操作；</p>
+</li>
+<li><p>watch支持异步；</p>
+</li>
+<li><p>监听的函数接收两个参数，第一个参数是最新的值；第二个参数是输入之前的值；</p>
+</li>
+<li><p>当一个属性发生变化时，需要执行对应的操作；一对多；</p>
+</li>
+<li><p>监听数据必须是data中声明过或者父组件传递过来的props中的数据，当数据变化时，触发其他操作，函数有两个参数：</p>
+</li>
+</ul>
+<blockquote>
+<p>immediate：组件加载立即触发回调函数执行</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#96;watch: &#123;</span><br><span class="line"> firstName: &#123;</span><br><span class="line"> handler(newName, oldName) &#123;</span><br><span class="line"> this.fullName &#x3D; newName + &#39; &#39; + this.lastName;</span><br><span class="line"> &#125;,</span><br><span class="line"> &#x2F;&#x2F; 代表在wacth里声明了firstName这个方法之后立即执行handler方法</span><br><span class="line"> immediate: true</span><br><span class="line"> &#125;</span><br><span class="line">&#125; 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>deep: deep的意思就是深入观察，监听器会一层层的往下遍历，给对象的所有属性都加上这个监听器，但是这样性能开销就会非常大了，任何修改obj里面任何一个属性都会触发这个监听器里的 handler</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#96;watch: &#123;</span><br><span class="line"> obj: &#123;</span><br><span class="line"> handler(newName, oldName) &#123;</span><br><span class="line"> console.log(&#39;obj.a changed&#39;);</span><br><span class="line"> &#125;,</span><br><span class="line"> immediate: true,</span><br><span class="line"> deep: true</span><br><span class="line"> &#125;</span><br><span class="line">&#125; 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>优化：我们可以使用字符串的形式监听</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#96;watch: &#123;</span><br><span class="line"> &#39;obj.a&#39;: &#123;</span><br><span class="line"> handler(newName, oldName) &#123;</span><br><span class="line"> console.log(&#39;obj.a changed&#39;);</span><br><span class="line"> &#125;,</span><br><span class="line"> immediate: true,</span><br><span class="line"> &#x2F;&#x2F; deep: true</span><br><span class="line"> &#125;</span><br><span class="line">&#125; 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>这样Vue.js才会一层一层解析下去，直到遇到属性a，然后才给a设置监听函数。</p>
+<h3 id="vue-loader是什么？使用它的用途有哪些？"><a href="#vue-loader是什么？使用它的用途有哪些？" class="headerlink" title="vue-loader是什么？使用它的用途有哪些？"></a>vue-loader是什么？使用它的用途有哪些？</h3><p>vue文件的一个加载器，跟template/js/style转换成js模块。</p>
+<h3 id="nextTick是什么？"><a href="#nextTick是什么？" class="headerlink" title="$nextTick是什么？"></a>$nextTick是什么？</h3><p>vue实现响应式并不是数据发生变化后dom立即变化，而是按照一定的策略来进行dom更新。</p>
+<blockquote>
+<p>nextTick 是在下次 DOM 更新循环结束之后执行延迟回调，在修改数据之后使用nextTick，则可以在回调中获取更新后的 DOM</p>
+</blockquote>
+<h3 id="v-for-key的作用"><a href="#v-for-key的作用" class="headerlink" title="v-for key的作用"></a>v-for key的作用</h3><p>当Vue用 v-for 正在更新已渲染过的元素列表是，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue将不是移动DOM元素来匹配数据项的改变，而是简单复用此处每个元素，并且确保它在特定索引下显示已被渲染过的每个元素。</p>
+<p>为了给Vue一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key 属性。key属性的类型只能为 string或者number类型。</p>
+<p>key 的特殊属性主要用在Vue的虚拟DOM算法，在新旧nodes对比时辨识VNodes。如果不使用 key，Vue会使用一种最大限度减少动态元素并且尽可能的尝试修复/再利用相同类型元素的算法。使用key，它会基于key的变化重新排列元素顺序，并且会移除 key 不存在的元素。</p>
+<h3 id="Vue的双向数据绑定原理是什么？"><a href="#Vue的双向数据绑定原理是什么？" class="headerlink" title="Vue的双向数据绑定原理是什么？"></a>Vue的双向数据绑定原理是什么？</h3><p>vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。主要分为以下几个步骤：</p>
+<blockquote>
+<p>1、需要observe的数据对象进行递归遍历，包括子属性对象的属性，都加上setter和getter这样的话，给这个对象的某个值赋值，就会触发setter，那么就能监听到了数据变化</p>
+</blockquote>
+<blockquote>
+<p>2、compile解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图</p>
+</blockquote>
+<blockquote>
+<p>3、Watcher订阅者是Observer和Compile之间通信的桥梁，主要做的事情是: ①在自身实例化时往属性订阅器(dep)里面添加自己 ②自身必须有一个update()方法 ③待属性变动dep.notice()通知时，能调用自身的update()方法，并触发Compile中绑定的回调，则功成身退。</p>
+</blockquote>
+<blockquote>
+<p>4、MVVM作为数据绑定的入口，整合Observer、Compile和Watcher三者，通过Observer来监听自己的model数据变化，通过Compile来解析编译模板指令，最终利用Watcher搭起Observer和Compile之间的通信桥梁，达到数据变化 -&gt; 视图更新；视图交互变化(input) -&gt; 数据model变更的双向绑定效果。</p>
+</blockquote>
+<h3 id="组件传值"><a href="#组件传值" class="headerlink" title="组件传值"></a>组件传值</h3><h4 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h4><p>通过props传递</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;父组件： &lt;child value &#x3D; &#39;传递的数据&#39; &#x2F;&gt;</span><br><span class="line"> 子组件: props[&#39;value&#39;],接收数据,接受之后使用和data中定义数据使用方式一样 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h4 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h4><p>在父组件中给子组件绑定一个自定义的事件，子组件通过$emit()触发该事件并传值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;父组件： &lt;child @receive &#x3D; &#39;receive&#39; &#x2F;&gt;</span><br><span class="line"> 子组件: this.$emit(&#39;receive&#39;,&#39;传递的数据&#39;) 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h4 id="兄弟组件传值"><a href="#兄弟组件传值" class="headerlink" title="兄弟组件传值"></a>兄弟组件传值</h4><ul>
+<li>通过中央通信 let bus = new Vue()</li>
+</ul>
+<blockquote>
+<p>A：methods :{ 函数{bus.$emit(‘自定义事件名’，数据)} 发送</p>
+</blockquote>
+<blockquote>
+<p>B：created （）{bus.$on(‘A发送过来的自定义事件名’，函数)} 进行数据接收</p>
+</blockquote>
+<ul>
+<li>通过vuex</li>
+</ul>
+<h3 id="prop-验证，和默认值"><a href="#prop-验证，和默认值" class="headerlink" title="prop 验证，和默认值"></a>prop 验证，和默认值</h3><p>我们在父组件给子组件传值的时候，可以指定该props的默认值及类型，当传递数据类型不正确的时候，vue会发出警告</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#96;props: &#123;</span><br><span class="line"> visible: &#123;</span><br><span class="line"> default: true,</span><br><span class="line"> type: Boolean,</span><br><span class="line"> required: true</span><br><span class="line"> &#125;,</span><br><span class="line">&#125;, 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h3 id="请说下封装-vue-组件的过程"><a href="#请说下封装-vue-组件的过程" class="headerlink" title="请说下封装 vue 组件的过程"></a>请说下封装 vue 组件的过程</h3><p>首先，组件可以提升整个项目的开发效率。能够把页面抽象成多个相对独立的模块，解决了我们传统项目开发：效率低、难维护、复用性等问题。</p>
+<p>然后，使用Vue.extend方法创建一个组件，然后使用Vue.component方法注册组件。子组件需要数据，可以在props中接受定义。而子组件修改好数据后，想把数据传递给父组件。可以采用emit方法。</p>
+<h3 id="Vue-js的template编译"><a href="#Vue-js的template编译" class="headerlink" title="Vue.js的template编译"></a>Vue.js的template编译</h3><p>简而言之，就是先转化成AST树，再得到的render函数返回VNode（Vue的虚拟DOM节点），详细步骤如下：</p>
+<blockquote>
+<p>首先，通过compile编译器把template编译成AST语法树（abstract syntax tree 即 源代码的抽象语法结构的树状表现形式），compile是createCompiler的返回值，createCompiler是用以创建编译器的。另外compile还负责合并option。</p>
+</blockquote>
+<blockquote>
+<p>然后，AST会经过generate（将AST语法树转化成render funtion字符串的过程）得到render函数，render的返回值是VNode，VNode是Vue的虚拟DOM节点，里面有（标签名、子节点、文本等等）</p>
+</blockquote>
+<h3 id="scss是什么？在vue-cli中的安装使用步骤是？有哪几大特性？"><a href="#scss是什么？在vue-cli中的安装使用步骤是？有哪几大特性？" class="headerlink" title="scss是什么？在vue.cli中的安装使用步骤是？有哪几大特性？"></a>scss是什么？在vue.cli中的安装使用步骤是？有哪几大特性？</h3><p>css的预编译,使用步骤如下：</p>
+<p>第一步：用npm 下三个loader（sass-loader、css-loader、node-sass）</p>
+<p>第二步：在build目录找到webpack.base.config.js，在那个extends属性中加一个拓展.scss</p>
+<p>第三步：还是在同一个文件，配置一个module属性</p>
+<p>第四步：然后在组件的style标签加上lang属性 ，例如：lang=”scss”</p>
+<p>特性主要有:</p>
+<ul>
+<li><p>可以用变量，例如（$变量名称=值）</p>
+</li>
+<li><p>可以用混合器，例如（）</p>
+</li>
+<li><p>可以嵌套</p>
+</li>
+</ul>
+<h3 id="vue如何监听对象或者数组某个属性的变化"><a href="#vue如何监听对象或者数组某个属性的变化" class="headerlink" title="vue如何监听对象或者数组某个属性的变化"></a>vue如何监听对象或者数组某个属性的变化</h3><p>当在项目中直接设置数组的某一项的值，或者直接设置对象的某个属性值，这个时候，你会发现页面并没有更新。这是因为Object.defineProperty()限制，监听不到变化。</p>
+<p>解决方式：</p>
+<ul>
+<li>this.$set(你要改变的数组/对象，你要改变的位置/key，你要改成什么value)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;this.$set(this.arr, 0, &quot;OBKoro1&quot;); &#x2F;&#x2F; 改变数组</span><br><span class="line">this.$set(this.obj, &quot;c&quot;, &quot;OBKoro1&quot;); &#x2F;&#x2F; 改变对象 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>调用以下几个数组的方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;splice()、 push()、pop()、shift()、unshift()、sort()、reverse()</span><br><span class="line">复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>vue源码里缓存了array的原型链，然后重写了这几个方法，触发这几个方法的时候会observer数据，意思是使用这些方法不用我们再进行额外的操作，视图自动进行更新。 推荐使用splice方法会比较好自定义,因为splice可以在数组的任何位置进行删除/添加操作</p>
+<h3 id="常用的事件修饰符"><a href="#常用的事件修饰符" class="headerlink" title="常用的事件修饰符"></a>常用的事件修饰符</h3><ul>
+<li><p>.stop:阻止冒泡</p>
+</li>
+<li><p>.prevent:阻止默认行为</p>
+</li>
+<li><p>.self:仅绑定元素自身触发</p>
+</li>
+<li><p>.once: 2.1.4 新增,只触发一次</p>
+</li>
+<li><p>passive: 2.3.0 新增,滚动事件的默认行为 (即滚动行为) 将会立即触发,不能和.prevent 一起使用</p>
+</li>
+<li><p>.sync 修饰符</p>
+</li>
+</ul>
+<p>从 2.3.0 起vue重新引入了.sync修饰符，但是这次它只是作为一个编译时的语法糖存在。它会被扩展为一个自动更新父组件属性的 v-on 监听器。示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;&lt;comp :foo.sync&#x3D;&quot;bar&quot;&gt;&lt;&#x2F;comp&gt;</span><br><span class="line">复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>会被扩展为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;&lt;comp :foo&#x3D;&quot;bar&quot; @update:foo&#x3D;&quot;val &#x3D;&gt; bar &#x3D; val&quot;&gt;&lt;&#x2F;comp&gt;</span><br><span class="line">复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>当子组件需要更新 foo 的值时，它需要显式地触发一个更新事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;this.$emit(&#39;update:foo&#39;, newValue)</span><br><span class="line">复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h3 id="vue如何获取dom"><a href="#vue如何获取dom" class="headerlink" title="vue如何获取dom"></a>vue如何获取dom</h3><p>先给标签设置一个ref值，再通过this.$refs.domName获取，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;&lt;div ref&#x3D;&quot;test&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line"> const dom &#x3D; this.$refs.test 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h3 id="v-on可以监听多个方法吗？"><a href="#v-on可以监听多个方法吗？" class="headerlink" title="v-on可以监听多个方法吗？"></a>v-on可以监听多个方法吗？</h3><p>是可以的，来个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;&lt;input type&#x3D;&quot;text&quot; v-on&#x3D;&quot;&#123; input:onInput,focus:onFocus,blur:onBlur, &#125;&quot;&gt;</span><br><span class="line">复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h3 id="assets和static的区别"><a href="#assets和static的区别" class="headerlink" title="assets和static的区别"></a>assets和static的区别</h3><p>这两个都是用来存放项目中所使用的静态资源文件。</p>
+<p>两者的区别：</p>
+<p>assets中的文件在运行npm run build的时候会打包，简单来说就是会被压缩体积，代码格式化之类的。打包之后也会放到static中。</p>
+<p>static中的文件则不会被打包。</p>
+<blockquote>
+<p>建议：将图片等未处理的文件放在assets中，打包减少体积。而对于第三方引入的一些资源文件如iconfont.css等可以放在static中，因为这些文件已经经过处理了。</p>
+</blockquote>
+<h3 id="slot插槽"><a href="#slot插槽" class="headerlink" title="slot插槽"></a>slot插槽</h3><p>很多时候，我们封装了一个子组件之后，在父组件使用的时候，想添加一些dom元素，这个时候就可以使用slot插槽了，但是这些dom是否显示以及在哪里显示，则是看子组件中slot组件的位置了。</p>
+<h3 id="vue初始化页面闪动问题"><a href="#vue初始化页面闪动问题" class="headerlink" title="vue初始化页面闪动问题"></a>vue初始化页面闪动问题</h3><p>使用vue开发时，在vue初始化之前，由于div是不归vue管的，所以我们写的代码在还没有解析的情况下会容易出现花屏现象，看到类似于的字样，虽然一般情况下这个时间很短暂，但是我们还是有必要让解决这个问题的。</p>
+<p>首先：在css里加上以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#96;[v-cloak] &#123;</span><br><span class="line"> display: none;</span><br><span class="line">&#125; 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>如果没有彻底解决问题，则在根元素加上style=”display: none;” :style=”{display: ‘block’}”</p>
+<h2 id="vue插件篇"><a href="#vue插件篇" class="headerlink" title="vue插件篇"></a>vue插件篇</h2><h3 id="状态管理（vuex）"><a href="#状态管理（vuex）" class="headerlink" title="状态管理（vuex）"></a>状态管理（vuex）</h3><h4 id="vuex是什么"><a href="#vuex是什么" class="headerlink" title="vuex是什么"></a>vuex是什么</h4><p>Vuex 是一个专为 Vue.js应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。Vuex 也集成到 Vue 的官方调试工具 devtools extension，提供了诸如零配置的 time-travel 调试、状态快照导入导出等高级调试功能。</p>
+<h4 id="怎么使用vuex"><a href="#怎么使用vuex" class="headerlink" title="怎么使用vuex"></a>怎么使用vuex</h4><p>第一步安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;npm install vuex -S</span><br><span class="line">复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>第二步创建store</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#96;import Vue from &#39;vue&#39;;</span><br><span class="line">import Vuex from &#39;vuex&#39;;</span><br><span class="line">Vue.use(Vuex);</span><br><span class="line">&#x2F;&#x2F;不是在生产环境debug为true</span><br><span class="line">const debug &#x3D; process.env.NODE_ENV !&#x3D;&#x3D; &#39;production&#39;;</span><br><span class="line">&#x2F;&#x2F;创建Vuex实例对象</span><br><span class="line">const store &#x3D; new Vuex.Store(&#123;</span><br><span class="line"> strict:debug,&#x2F;&#x2F;在不是生产环境下都开启严格模式</span><br><span class="line"> state:&#123;</span><br><span class="line"> &#125;,</span><br><span class="line"> getters:&#123;</span><br><span class="line"> &#125;,</span><br><span class="line"> mutations:&#123;</span><br><span class="line"> &#125;,</span><br><span class="line"> actions:&#123;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br><span class="line">export default store; 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>第三步注入vuex</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#96;import Vue from &#39;vue&#39;;</span><br><span class="line">import App from &#39;.&#x2F;App.vue&#39;;</span><br><span class="line">import store from &#39;.&#x2F;store&#39;;</span><br><span class="line">const vm &#x3D; new Vue(&#123;</span><br><span class="line"> store:store,</span><br><span class="line"> render: h &#x3D;&gt; h(App)</span><br><span class="line">&#125;).$mount(&#39;#app&#39;) 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h4 id="vuex中有几个核心属性，分别是什么？"><a href="#vuex中有几个核心属性，分别是什么？" class="headerlink" title="vuex中有几个核心属性，分别是什么？"></a>vuex中有几个核心属性，分别是什么？</h4><p>一共有5个核心属性，分别是:</p>
+<ul>
+<li><p>state 唯一数据源,Vue 实例中的 data 遵循相同的规则</p>
+</li>
+<li><p>getters 可以认为是 store 的计算属性,就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。Getter 会暴露为 store.getters 对象，你可以以属性的形式访问这些值.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#96;const store &#x3D; new Vuex.Store(&#123;</span><br><span class="line"> state: &#123;</span><br><span class="line"> todos: [</span><br><span class="line"> &#123; id: 1, text: &#39;...&#39;, done: true &#125;,</span><br><span class="line"> &#123; id: 2, text: &#39;...&#39;, done: false &#125;</span><br><span class="line"> ]</span><br><span class="line"> &#125;,</span><br><span class="line"> getters: &#123;</span><br><span class="line"> doneTodos: state &#x3D;&gt; &#123;</span><br><span class="line"> return state.todos.filter(todo &#x3D;&gt; todo.done)</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br><span class="line"> store.getters.doneTodos &#x2F;&#x2F; -&gt; [&#123; id: 1, text: &#39;...&#39;, done: true &#125;] 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>mutation 更改 Vuex 的 store 中的状态的唯一方法是提交 mutation,非常类似于事件,通过store.commit 方法触发</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#96;const store &#x3D; new Vuex.Store(&#123;</span><br><span class="line"> state: &#123;</span><br><span class="line"> count: 1</span><br><span class="line"> &#125;,</span><br><span class="line"> mutations: &#123;</span><br><span class="line"> increment (state) &#123;</span><br><span class="line"> &#x2F;&#x2F; 变更状态</span><br><span class="line"> state.count++</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br><span class="line"> store.commit(&#39;increment&#39;) 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>action Action 类似于 mutation，不同在于Action 提交的是 mutation，而不是直接变更状态，Action 可以包含任意异步操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#96;const store &#x3D; new Vuex.Store(&#123;</span><br><span class="line"> state: &#123;</span><br><span class="line"> count: 0</span><br><span class="line"> &#125;,</span><br><span class="line"> mutations: &#123;</span><br><span class="line"> increment (state) &#123;</span><br><span class="line"> state.count++</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;,</span><br><span class="line"> actions: &#123;</span><br><span class="line"> increment (context) &#123;</span><br><span class="line"> context.commit(&#39;increment&#39;)</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;) 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>module 由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#96;const moduleA &#x3D; &#123;</span><br><span class="line"> state: () &#x3D;&gt; (&#123; ... &#125;),</span><br><span class="line"> mutations: &#123; ... &#125;,</span><br><span class="line"> actions: &#123; ... &#125;,</span><br><span class="line"> getters: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"> const moduleB &#x3D; &#123;</span><br><span class="line"> state: () &#x3D;&gt; (&#123; ... &#125;),</span><br><span class="line"> mutations: &#123; ... &#125;,</span><br><span class="line"> actions: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"> const store &#x3D; new Vuex.Store(&#123;</span><br><span class="line"> modules: &#123;</span><br><span class="line"> a: moduleA,</span><br><span class="line"> b: moduleB</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br><span class="line"> store.state.a &#x2F;&#x2F; -&gt; moduleA 的状态</span><br><span class="line">store.state.b &#x2F;&#x2F; -&gt; moduleB 的状态 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h4 id="ajax请求代码应该写在组件的methods中还是vuex的actions中"><a href="#ajax请求代码应该写在组件的methods中还是vuex的actions中" class="headerlink" title="ajax请求代码应该写在组件的methods中还是vuex的actions中"></a>ajax请求代码应该写在组件的methods中还是vuex的actions中</h4><p>如果请求来的数据是不是要被其他组件公用，仅仅在请求的组件内使用，就不需要放入vuex 的state里。</p>
+<p>如果被其他地方复用，这个很大几率上是需要的，如果需要，请将请求放入action里，方便复用。</p>
+<h4 id="从vuex中获取的数据能直接更改吗？"><a href="#从vuex中获取的数据能直接更改吗？" class="headerlink" title="从vuex中获取的数据能直接更改吗？"></a>从vuex中获取的数据能直接更改吗？</h4><p>从vuex中取的数据，不能直接更改，需要浅拷贝对象之后更改，否则报错；</p>
+<h4 id="vuex中的数据在页面刷新后数据消失"><a href="#vuex中的数据在页面刷新后数据消失" class="headerlink" title="vuex中的数据在页面刷新后数据消失"></a>vuex中的数据在页面刷新后数据消失</h4><p>用sessionstorage 或者 localstorage 存储数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;存储： sessionStorage.setItem( &#39;名&#39;, JSON.stringify(值) )</span><br><span class="line">使用： sessionStorage.getItem(&#39;名&#39;) ---得到的值为字符串类型，用JSON.parse()去引号； 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>也可以引入插件vuex-persist，使用方法如下：</p>
+<ul>
+<li>安装</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#96;npm install --save vuex-persist</span><br><span class="line">or</span><br><span class="line">yarn add vuex-persist 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>引入</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;import VuexPersistence from &#39;vuex-persist&#39;</span><br><span class="line">复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>先创建一个对象并进行配置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#96;const vuexLocal &#x3D; new VuexPersistence(&#123;</span><br><span class="line"> storage: window.localStorage</span><br><span class="line">&#125;) 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>引入进vuex插件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#96;const store &#x3D; new Vuex.Store(&#123;</span><br><span class="line"> state: &#123; ... &#125;,</span><br><span class="line"> mutations: &#123; ... &#125;,</span><br><span class="line"> actions: &#123; ... &#125;,</span><br><span class="line"> plugins: [vuexLocal.plugin]</span><br><span class="line">&#125;) 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>通过以上设置，在图3中各个页面之间跳转，如果刷新某个视图，数据并不会丢失，依然存在，并且不需要在每个 mutations 中手动存取 storage 。</p>
+<h4 id="Vuex的严格模式是什么-有什么作用-怎么开启？"><a href="#Vuex的严格模式是什么-有什么作用-怎么开启？" class="headerlink" title="Vuex的严格模式是什么,有什么作用,怎么开启？"></a>Vuex的严格模式是什么,有什么作用,怎么开启？</h4><p>在严格模式下，无论何时发生了状态变更且不是由mutation函数引起的，将会抛出错误。这能保证所有的状态变更都能被调试工具跟踪到。</p>
+<p>在Vuex.Store 构造器选项中开启,如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#96;const store &#x3D; new Vuex.Store(&#123;</span><br><span class="line"> strict:true,</span><br><span class="line">&#125;) 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h4 id="怎么在组件中批量使用Vuex的getter属性"><a href="#怎么在组件中批量使用Vuex的getter属性" class="headerlink" title="怎么在组件中批量使用Vuex的getter属性"></a>怎么在组件中批量使用Vuex的getter属性</h4><p>使用mapGetters辅助函数, 利用对象展开运算符将getter混入computed 对象中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#96;import &#123;mapGetters&#125; from &#39;vuex&#39;</span><br><span class="line">export default&#123;</span><br><span class="line"> computed:&#123;</span><br><span class="line"> ...mapGetters([&#39;total&#39;,&#39;discountTotal&#39;])</span><br><span class="line"> &#125;</span><br><span class="line">&#125; 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组件中重复使用mutation"><a href="#组件中重复使用mutation" class="headerlink" title="组件中重复使用mutation"></a>组件中重复使用mutation</h4><p>使用mapMutations辅助函数,在组件中这么使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#96;import &#123; mapMutations &#125; from &#39;vuex&#39;</span><br><span class="line">methods:&#123;</span><br><span class="line"> ...mapMutations(&#123;</span><br><span class="line"> setNumber:&#39;SET_NUMBER&#39;,</span><br><span class="line"> &#125;)</span><br><span class="line">&#125; 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>然后调用this.setNumber(10)相当调用this.$store.commit(‘SET_NUMBER’,10)</p>
+<h4 id="mutation和action有什么区别"><a href="#mutation和action有什么区别" class="headerlink" title="mutation和action有什么区别"></a>mutation和action有什么区别</h4><ul>
+<li><p>action 提交的是 mutation，而不是直接变更状态。mutation可以直接变更状态</p>
+</li>
+<li><p>action 可以包含任意异步操作。mutation只能是同步操作</p>
+</li>
+<li><p>提交方式不同</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;action 是用this.store.dispatch(&#39;ACTION_NAME&#39;,data)来提交。</span><br><span class="line">mutation是用this.$store.commit(&#39;SET_NUMBER&#39;,10)来提交 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接收参数不同，mutation第一个参数是state，而action第一个参数是context，其包含了</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#123;</span><br><span class="line"> state,      &#x2F;&#x2F; 等同于 &#96;store.state&#96;，若在模块中则为局部状态</span><br><span class="line"> rootState,  &#x2F;&#x2F; 等同于 &#96;store.state&#96;，只存在于模块中</span><br><span class="line"> commit,     &#x2F;&#x2F; 等同于 &#96;store.commit&#96;</span><br><span class="line"> dispatch,   &#x2F;&#x2F; 等同于 &#96;store.dispatch&#96;</span><br><span class="line"> getters,    &#x2F;&#x2F; 等同于 &#96;store.getters&#96;</span><br><span class="line"> rootGetters &#x2F;&#x2F; 等同于 &#96;store.getters&#96;，只存在于模块中</span><br><span class="line">&#125; 复制代码&#96;&#96;</span><br></pre></td></tr></table></figure>
+
+<h4 id="在v-model上怎么用Vuex中state的值？"><a href="#在v-model上怎么用Vuex中state的值？" class="headerlink" title="在v-model上怎么用Vuex中state的值？"></a>在v-model上怎么用Vuex中state的值？</h4><p>需要通过computed计算属性来转换。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#96;&lt;input v-model&#x3D;&quot;message&quot;&gt;</span><br><span class="line">&#x2F;&#x2F; ...</span><br><span class="line">computed: &#123;</span><br><span class="line"> message: &#123;</span><br><span class="line"> get () &#123;</span><br><span class="line"> return this.$store.state.message</span><br><span class="line"> &#125;,</span><br><span class="line"> set (value) &#123;</span><br><span class="line"> this.$store.commit(&#39;updateMessage&#39;, value)</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125; 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h3 id="路由页面管理（vue-router）"><a href="#路由页面管理（vue-router）" class="headerlink" title="路由页面管理（vue-router）"></a>路由页面管理（vue-router）</h3><h4 id="什么是vue-router"><a href="#什么是vue-router" class="headerlink" title="什么是vue-router"></a>什么是vue-router</h4><p>Vue Router 是 Vue.js 官方的路由管理器。它和 Vue.js 的核心深度集成，让构建单页面应用变得易如反掌。包含的功能有：</p>
+<ul>
+<li><p>嵌套的路由/视图表</p>
+</li>
+<li><p>模块化的、基于组件的路由配置</p>
+</li>
+<li><p>路由参数、查询、通配符</p>
+</li>
+<li><p>基于 Vue.js 过渡系统的视图过渡效果</p>
+</li>
+<li><p>细粒度的导航控制</p>
+</li>
+<li><p>带有自动激活的 CSS class 的链接</p>
+</li>
+<li><p>HTML5 历史模式或 hash 模式，在 IE9 中自动降级</p>
+</li>
+<li><p>自定义的滚动条行为</p>
+</li>
+</ul>
+<h4 id="怎么使用vue-router"><a href="#怎么使用vue-router" class="headerlink" title="怎么使用vue-router"></a>怎么使用vue-router</h4><p>第一步安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#96;npm install vue-router -S</span><br><span class="line">  复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>第二步在main.js中使用Vue Router组件</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/7/14/1734d65dc240568e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></p>
+<p>第三步配置路由</p>
+<ul>
+<li>定义 (路由) 组件</li>
+</ul>
+<p>路由组件可以是直接定义，也可以是导入已经定义好的组件。这里导入已经定义好的组件。如下</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/7/14/1734d65dc2668cc8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></p>
+<ul>
+<li>定义路由（路由对象数组）</li>
+</ul>
+<p>定义路由对象数组。对象的path是自定义的路径（即使用这个路径可以找到对应的组件），component是指该路由对应的组件。如下：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/7/14/1734d65dc3da62ed?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></p>
+<ul>
+<li>实例化Vue Router对象</li>
+</ul>
+<p>调用Vue Router的构造方法创建一个Vue Router的实例对象，将上一步定义的路由对象数组作为参数对象的值传入。如下</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/7/14/1734d65dc48e8bf4?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></p>
+<ul>
+<li>挂载根实例</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2020/7/14/1734d65dcb5f42d7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></p>
+<p>第四步在App.vue中使用路由</p>
+<p>在App.vue中使用标签来显示路由对应的组件，使用标签指定当点击时显示的对应的组件，to属性就是指定组件对应的路由。如下：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/7/14/1734d65dc512c1e6?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></p>
+<h4 id="怎么定义vue-router的动态路由？怎么获取传过来的动态参数？"><a href="#怎么定义vue-router的动态路由？怎么获取传过来的动态参数？" class="headerlink" title="怎么定义vue-router的动态路由？怎么获取传过来的动态参数？"></a>怎么定义vue-router的动态路由？怎么获取传过来的动态参数？</h4><p>在router目录下的index.js文件中，对path属性加上/:id。使用router对象的params.id获取动态参数</p>
+<h4 id="vue-router的导航钩子"><a href="#vue-router的导航钩子" class="headerlink" title="vue-router的导航钩子"></a>vue-router的导航钩子</h4><p>常用的是router.beforeEach(to,from,next)，在跳转前进行权限判断。一共有三种：</p>
+<ul>
+<li><p>全局导航钩子：router.beforeEach(to,from,next)</p>
+</li>
+<li><p>组件内的钩子</p>
+</li>
+<li><p>单独路由独享组件</p>
+</li>
+</ul>
+<h4 id="vue路由传参"><a href="#vue路由传参" class="headerlink" title="vue路由传参"></a>vue路由传参</h4><blockquote>
+<p>使用query方法传入的参数使用this.$route.query接受</p>
+</blockquote>
+<blockquote>
+<p>使用params方式传入的参数使用this.$route.params接受</p>
+</blockquote>
+<h4 id="router和route的区别"><a href="#router和route的区别" class="headerlink" title="router和route的区别"></a>router和route的区别</h4><blockquote>
+<p>route为当前router跳转对象里面可以获取name、path、query、params等</p>
+</blockquote>
+<blockquote>
+<p>router为VueRouter实例，想要导航到不同URL，则使用router.push方法</p>
+</blockquote>
+<h4 id="路由-TypeError-Cannot-read-property-‘matched’-of-undefined-的错误问题"><a href="#路由-TypeError-Cannot-read-property-‘matched’-of-undefined-的错误问题" class="headerlink" title="路由 TypeError: Cannot read property ‘matched’ of undefined 的错误问题"></a>路由 TypeError: Cannot read property ‘matched’ of undefined 的错误问题</h4><p>找到入口文件main.js里的new Vue()，必须使用router名，不能把router改成Router或者其他的别名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#x2F;&#x2F; 引入路由</span><br><span class="line">import router from &#39;.&#x2F;routers&#x2F;router.js&#39;</span><br><span class="line"> new Vue(&#123;</span><br><span class="line"> el: &#39;#app&#39;,</span><br><span class="line"> router,    &#x2F;&#x2F; 这个名字必须使用router</span><br><span class="line"> render: h &#x3D;&gt; h(App)</span><br><span class="line">&#125;); 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h4 id="路由按需加载"><a href="#路由按需加载" class="headerlink" title="路由按需加载"></a>路由按需加载</h4><p>随着项目功能模块的增加，引入的文件数量剧增。如果不做任何处理，那么首屏加载会相当的缓慢，这个时候，路由按需加载就闪亮登场了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#96;webpack&lt; 2.4 时</span><br><span class="line">&#123; </span><br><span class="line"> path:&#39;&#x2F;&#39;, </span><br><span class="line"> name:&#39;home&#39;,</span><br><span class="line"> components:resolve&#x3D;&gt;require([&#39;@&#x2F;components&#x2F;home&#39;],resolve)</span><br><span class="line">&#125; </span><br><span class="line">webpack&gt; 2.4 时</span><br><span class="line">&#123; </span><br><span class="line"> path:&#39;&#x2F;&#39;, </span><br><span class="line"> name:&#39;home&#39;, </span><br><span class="line"> components:()&#x3D;&gt;import(&#39;@&#x2F;components&#x2F;home&#39;)</span><br><span class="line">&#125; 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>import()方法是由es6提出的，动态加载返回一个Promise对象，then方法的参数是加载到的模块。类似于Node.js的require方法，主要import()方法是异步加载的。</p>
+<h4 id="Vue里面router-link在电脑上有用，在安卓上没反应怎么解决"><a href="#Vue里面router-link在电脑上有用，在安卓上没反应怎么解决" class="headerlink" title="Vue里面router-link在电脑上有用，在安卓上没反应怎么解决"></a>Vue里面router-link在电脑上有用，在安卓上没反应怎么解决</h4><p>Vue路由在Android机上有问题，babel问题，安装babel polypill插件解决</p>
+<h4 id="Vue2中注册在router-link上事件无效解决方法"><a href="#Vue2中注册在router-link上事件无效解决方法" class="headerlink" title="Vue2中注册在router-link上事件无效解决方法"></a>Vue2中注册在router-link上事件无效解决方法</h4><p>使用@click.native。原因：router-link会阻止click事件，.native指直接监听一个原生事件</p>
+<h4 id="RouterLink在IE和Firefox中不起作用（路由不跳转）的问题"><a href="#RouterLink在IE和Firefox中不起作用（路由不跳转）的问题" class="headerlink" title="RouterLink在IE和Firefox中不起作用（路由不跳转）的问题"></a>RouterLink在IE和Firefox中不起作用（路由不跳转）的问题</h4><ul>
+<li><p>只用a标签，不使用button标签</p>
+</li>
+<li><p>使用button标签和Router.navigate方法</p>
+</li>
+</ul>
+<h3 id="网络请求-axios"><a href="#网络请求-axios" class="headerlink" title="网络请求(axios)"></a>网络请求(axios)</h3><p>这个模块请看我的另一篇文章，此处不再整理（我太懒了）</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5f04095e5188252e4a27e31c">学会了axios封装，世界都是你的</a></p>
+<h3 id="视频播放-video-js"><a href="#视频播放-video-js" class="headerlink" title="视频播放(video.js)"></a>视频播放(video.js)</h3><p>这个模块请看我的另一篇文章，此处不再整理（我太懒了）</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5f0bfa2de51d4534c243a124">手把手从零开始—封装一个vue视频播放器组件</a></p>
+<h3 id="vue常用ui库"><a href="#vue常用ui库" class="headerlink" title="vue常用ui库"></a>vue常用ui库</h3><h4 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h4><ul>
+<li><p>mint-ui （<a target="_blank" rel="noopener" href="http://mint-ui.github.io/#!/zh-cn%EF%BC%89">http://mint-ui.github.io/#!/zh-cn）</a></p>
+</li>
+<li><p>Vant（<a target="_blank" rel="noopener" href="https://youzan.github.io/vant/#/zh-CN/home%EF%BC%89">https://youzan.github.io/vant/#/zh-CN/home）</a></p>
+</li>
+<li><p>VUX (<a target="_blank" rel="noopener" href="https://vux.li/">https://vux.li/</a>)</p>
+</li>
+</ul>
+<h4 id="pc端"><a href="#pc端" class="headerlink" title="pc端"></a>pc端</h4><ul>
+<li><p>element-ui（<a target="_blank" rel="noopener" href="https://element.eleme.cn/2.13/#/zh-CN/component/installation%EF%BC%89">https://element.eleme.cn/2.13/#/zh-CN/component/installation）</a></p>
+</li>
+<li><p>Ant Design of Vue（<a target="_blank" rel="noopener" href="https://www.antdv.com/docs/vue/introduce-cn/%EF%BC%89">https://www.antdv.com/docs/vue/introduce-cn/）</a></p>
+</li>
+<li><p>Avue (<a target="_blank" rel="noopener" href="https://avuejs.com/">https://avuejs.com/</a>)</p>
+</li>
+</ul>
+<h2 id="常用webpack配置"><a href="#常用webpack配置" class="headerlink" title="常用webpack配置"></a>常用webpack配置</h2><h3 id="vue-lic3脚手架（vue-config-js）"><a href="#vue-lic3脚手架（vue-config-js）" class="headerlink" title="vue-lic3脚手架（vue.config.js）"></a>vue-lic3脚手架（vue.config.js）</h3><h4 id="publicPath"><a href="#publicPath" class="headerlink" title="publicPath"></a>publicPath</h4><p>类型：String</p>
+<p>默认：’/‘</p>
+<p>部署应用包时的基本 URL。默认情况下，Vue CLI会假设你的应用是被部署在一个域名的根路径上，例如<a target="_blank" rel="noopener" href="https://www.my-app.com/%E3%80%82%E5%A6%82%E6%9E%9C%E5%BA%94%E7%94%A8%E8%A2%AB%E9%83%A8%E7%BD%B2%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%AD%90%E8%B7%AF%E5%BE%84%E4%B8%8A%EF%BC%8C%E4%BD%A0%E5%B0%B1%E9%9C%80%E8%A6%81%E7%94%A8%E8%BF%99%E4%B8%AA%E9%80%89%E9%A1%B9%E6%8C%87%E5%AE%9A%E8%BF%99%E4%B8%AA%E5%AD%90%E8%B7%AF%E5%BE%84%E3%80%82%E4%BE%8B%E5%A6%82%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%BD%A0%E7%9A%84%E5%BA%94%E7%94%A8%E8%A2%AB%E9%83%A8%E7%BD%B2%E5%9C%A8https://www.my-app.com/my-app/%EF%BC%8C%E5%88%99%E8%AE%BE%E7%BD%AEpublicPath%E4%B8%BA/my-app/">https://www.my-app.com/。如果应用被部署在一个子路径上，你就需要用这个选项指定这个子路径。例如，如果你的应用被部署在https://www.my-app.com/my-app/，则设置publicPath为/my-app/</a></p>
+<p>这个值也可以被设置为空字符串 (‘’) 或是相对路径 (‘./‘)，这样所有的资源都会被链接为相对路径，这样打出来的包可以被部署在任意路径，也可以用在类似 Cordova hybrid 应用的文件系统中。</p>
+<h4 id="productionSourceMap"><a href="#productionSourceMap" class="headerlink" title="productionSourceMap"></a>productionSourceMap</h4><p>类型：boolean</p>
+<p>moren：true</p>
+<p>不允许打包时生成项目来源映射文件，在生产环境下可以显著的减少包的体积</p>
+<blockquote>
+<p>注 Source map的作用：针对打包后的代码进行的处理，就是一个信息文件，里面储存着位置信息。也就是说，转换后的代码的每一个位置，所对应的转换前的位置。有了它，出错的时候，除错工具将直接显示原始代码，而不是转换后的代码。这无疑给开发者带来了很大方便</p>
+</blockquote>
+<h4 id="assetsDir"><a href="#assetsDir" class="headerlink" title="assetsDir"></a>assetsDir</h4><p>放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录,默认是’’,</p>
+<h4 id="indexPath"><a href="#indexPath" class="headerlink" title="indexPath"></a>indexPath</h4><p>指定生成的 index.html 的输出路径(相对于outputDir)。也可以是一个绝对路径。默认是’index.html’</p>
+<h4 id="lintOnSave"><a href="#lintOnSave" class="headerlink" title="lintOnSave"></a>lintOnSave</h4><p>是否在每次保存时使用eslint检查，这个对语法的要求比较严格，对自己有要求的同学可以使用</p>
+<h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;css: &#123;</span><br><span class="line"> &#x2F;&#x2F;是否启用css分离插件，默认是true，如果不启用css样式分离插件，打包出来的css是通过内联样式的方式注入至dom中的，</span><br><span class="line"> extract: true,</span><br><span class="line"> sourceMap: false,&#x2F;&#x2F;效果同上</span><br><span class="line"> modules: false,&#x2F;&#x2F; 为所有的 CSS 及其预处理文件开启 CSS Modules。</span><br><span class="line"> &#x2F;&#x2F; 这个选项不会影响 &#96;*.vue&#96; 文件。</span><br><span class="line"> &#125;, 复制代码&#96;&#96;</span><br></pre></td></tr></table></figure>
+
+<h4 id="devServer"><a href="#devServer" class="headerlink" title="devServer"></a>devServer</h4><p>本地开发服务器配置，此处直接贴上我常用的配置，以注释的方式介绍</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#96;devServer: &#123; </span><br><span class="line"> &#x2F;&#x2F;配置开发服务器</span><br><span class="line"> host: &quot;0.0.0.0&quot;,</span><br><span class="line"> &#x2F;&#x2F;是否启用热加载，就是每次更新代码，是否需要重新刷新浏览器才能看到新代码效果</span><br><span class="line"> hot: true,</span><br><span class="line"> &#x2F;&#x2F;服务启动端口</span><br><span class="line"> port: &quot;8080&quot;,</span><br><span class="line"> &#x2F;&#x2F;是否自动打开浏览器默认为false</span><br><span class="line"> open: false,</span><br><span class="line"> &#x2F;&#x2F;配置http代理</span><br><span class="line"> proxy: &#123; </span><br><span class="line"> &quot;&#x2F;api&quot;: &#123; &#x2F;&#x2F;如果ajax请求的地址是http:&#x2F;&#x2F;192.168.0.118:9999&#x2F;api1那么你就可以在jajx中使用&#x2F;api&#x2F;api1路径,其请求路径会解析</span><br><span class="line"> &#x2F;&#x2F; http:&#x2F;&#x2F;192.168.0.118:9999&#x2F;api1，当然你在浏览器上开到的还是http:&#x2F;&#x2F;localhost:8080&#x2F;api&#x2F;api1;</span><br><span class="line"> target: &quot;http:&#x2F;&#x2F;192.168.0.118:9999&quot;,</span><br><span class="line"> &#x2F;&#x2F;是否允许跨域，这里是在开发环境会起作用，但在生产环境下，还是由后台去处理，所以不必太在意</span><br><span class="line"> changeOrigin: true,</span><br><span class="line"> pathRewrite: &#123;</span><br><span class="line"> &#x2F;&#x2F;把多余的路径置为&#39;&#39;</span><br><span class="line"> &quot;api&quot;: &quot;&quot;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;,</span><br><span class="line"> &quot;&#x2F;api2&quot;: &#123;&#x2F;&#x2F;可以配置多个代理，匹配上那个就使用哪种解析方式</span><br><span class="line"> target: &quot;http:&#x2F;&#x2F;api2&quot;,</span><br><span class="line"> &#x2F;&#x2F; ...</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;, 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h4 id="pluginOptions"><a href="#pluginOptions" class="headerlink" title="pluginOptions"></a>pluginOptions</h4><p>这是一个不进行任何 schema 验证的对象，因此它可以用来传递任何第三方插件选项，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#123;</span><br><span class="line"> &#x2F;&#x2F;定义一个全局的less文件，把公共样式变量放入其中，这样每次使用的时候就不用重新引用了</span><br><span class="line"> &#39;style-resources-loader&#39;: &#123;</span><br><span class="line"> preProcessor: &#39;less&#39;,</span><br><span class="line"> patterns: [</span><br><span class="line"> &#39;.&#x2F;src&#x2F;assets&#x2F;public.less&#39;</span><br><span class="line"> ]</span><br><span class="line"> &#125;</span><br><span class="line">&#125; 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<h4 id="chainWebpack"><a href="#chainWebpack" class="headerlink" title="chainWebpack"></a>chainWebpack</h4><p>是一个函数，会接收一个基于 webpack-chain 的 ChainableConfig 实例。允许对内部的 webpack 配置进行更细粒度的修改。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#96;chainWebpack(config) &#123; </span><br><span class="line">&#x2F;&#x2F;添加一个路径别名 假设有在assets&#x2F;img&#x2F;menu&#x2F;目录下有十张图片，如果全路径require(&quot;&#x2F;assets&#x2F;img&#x2F;menu&#x2F;img1.png&quot;)</span><br><span class="line">&#x2F;&#x2F;去引入在不同的层级下实在是太不方便了，这时候向下方一样定义一个路劲别名就很实用了</span><br><span class="line"> config.resolve.alias</span><br><span class="line"> &#x2F;&#x2F;添加多个别名支持链式调用</span><br><span class="line"> .set(&quot;assets&quot;, path.join(__dirname, &quot;&#x2F;src&#x2F;assets&quot;))</span><br><span class="line"> .set(&quot;img&quot;, path.join(__dirname, &quot;&#x2F;src&#x2F;assets&#x2F;img&#x2F;menu&quot;))</span><br><span class="line"> &#x2F;&#x2F;引入图片时只需require(&quot;img&#x2F;img1.png&quot;);即可</span><br><span class="line">&#125; 复制代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>参考：</p>
+<p>1、Vue常见问题总结 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq/_27674439/article/details/99449197">https://blog.csdn.net/qq\_27674439/article/details/99449197</a></p>
+<p>2、vue常见面试题 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/92407628">https://zhuanlan.zhihu.com/p/92407628</a></p>
+<p>3、vuex官网 <a target="_blank" rel="noopener" href="https://vuex.vuejs.org/zh/">https://vuex.vuejs.org/zh/</a></p>
+<p>4、Vuex面试题汇总 <a target="_blank" rel="noopener" href="https://juejin.im/post/5dba91e4518825647e4ef18b">https://juejin.im/post/5dba91e4518825647e4ef18b</a></p>
+<p>5、Vue CLI官网 <a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/">https://cli.vuejs.org/zh/</a></p>
+<p>历史好文推荐：</p>
+<p>1、<a target="_blank" rel="noopener" href="https://juejin.im/post/5f0fe0ee5188252e53638634">【万字长文】史上最强css、html总结~看完涨薪不再是梦</a></p>
+<p>2、<a target="_blank" rel="noopener" href="https://juejin.im/post/5f14e786f265da22f511e98f">【万字长文】最全JavaScript基础总结~建议收藏</a></p>
+<p>3、<a target="_blank" rel="noopener" href="https://juejin.im/post/5f06870ae51d4534b3030043">Event Loop我知道，宏任务微任务是什么鬼？</a></p>
+<p>4、<a target="_blank" rel="noopener" href="https://juejin.im/post/5f0439caf265da22ed5114e3">锋利码农武器之vscode</a></p>
+<p>5、<a target="_blank" rel="noopener" href="https://juejin.im/post/5f02e9e6e51d4534bf67bac6">面试宝典带你走上人生巅峰</a></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">John Doe</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://jiejieg.github.io/2020/09/07/vue%E6%80%BB%E7%BB%93/">https://jiejieg.github.io/2020/09/07/vue%E6%80%BB%E7%BB%93/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">John Doe</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/09/07/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            HTMLHTML语义化HTML语义化就是让页面内容结构化，它有如下优点
+123451、易于用户阅读，样式丢失的时候能让页面呈现清晰的结构。2、有利于SEO，搜索引擎根据标签来确定上下文和各个关键字的权重。3、方便其他设备解析，如盲人阅读器根
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/09/07/vue%E6%8A%80%E5%B7%A7/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. 内部监听生命周期函数今天产品经理又给我甩过来一个需求，需要开发一个图表，拿到需求，瞄了一眼，然后我就去echarts官网复制示例代码了，复制完改了改差不多了，改完代码长这样
+123456789101112131415161718192
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">John Doe</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
