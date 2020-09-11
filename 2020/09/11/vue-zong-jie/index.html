@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML,CSS,JavaScript,JQuery,Vue.js等">
+    <meta name="keywords" content="vue总结, HTML,CSS,JavaScript,JQuery,Vue.js等">
     <meta name="description" content="专注Web，分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>guoer</title>
+    <title>vue总结 | guoer</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">vue总结</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -443,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-07
+                    2020-09-11
                 </div>
                 
 
@@ -483,7 +487,149 @@
 <h3 id="vue中v-if和v-show有什么区别？"><a href="#vue中v-if和v-show有什么区别？" class="headerlink" title="vue中v-if和v-show有什么区别？"></a>vue中v-if和v-show有什么区别？</h3><p>v-if和v-show看起来似乎差不多，当条件不成立时，其所对应的标签元素都不可见，但是这两个选项是有区别的:</p>
 <p>1、v-if在条件切换时，会对标签进行适当的创建和销毁，而v-show则仅在初始化时加载一次，因此v-if的开销相对来说会比v-show大。</p>
 <p>2、v-if是惰性的，只有当条件为真时才会真正渲染标签；如果初始条件不为真，则v-if不会去渲染标签。v-show则无论初始条件是否成立，都会渲染标签，它仅仅做的只是简单的CSS切换。</p>
-<h3 id="computed和watch的区别"><a href="#computed和watch的区别" class="headerlink" title="computed和watch的区别"></a>computed和watch的区别</h3><h4 id="计算属性computed："><a href="#计算属性computed：" class="headerlink" title="计算属性computed："></a>计算属性computed：</h4><ul>
+<h3 id="computed和watch的区别"><a href="#computed和watch的区别" class="headerlink" title="computed和watch的区别"></a>computed和watch的区别</h3><h4 id="计算属性computed：1-内部监听生命周期函数"><a href="#计算属性computed：1-内部监听生命周期函数" class="headerlink" title="计算属性computed：1. 内部监听生命周期函数"></a>计算属性computed：1. 内部监听生命周期函数</h4><p>今天产品经理又给我甩过来一个需求，需要开发一个图表，拿到需求，瞄了一眼，然后我就去<code>echarts</code>官网复制示例代码了，复制完改了改差不多了，改完代码长这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;echarts&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    this.chart &#x3D; echarts.init(this.$el)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    window.addEventListener(&#39;resize&#39;, this.$_handleResizeChart)</span><br><span class="line">  &#125;,</span><br><span class="line">  updated() &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line">  beforeDestroy() &#123;</span><br><span class="line">    </span><br><span class="line">    window.removeEventListener(&#39;resize&#39;, this.$_handleResizeChart)</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    $_handleResizeChart() &#123;</span><br><span class="line">      this.chart.resize()</span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>功能写完开开心心的提测了，测试没啥问题，产品经理表示做的很棒。然而code review时候，技术大佬说了，这样有问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> 大佬：这样写不是很好，应该将监听&#96;resize&#96;事件与销毁&#96;resize&#96;事件放到一起，现在两段代码分开而且相隔几百行代码，可读性比较差</span><br><span class="line"></span><br><span class="line"> 我：那我把两个生命周期钩子函数位置换一下，放到一起?</span><br><span class="line"></span><br><span class="line"> 大佬： &#96;hook&#96;听过没？</span><br><span class="line"></span><br><span class="line"> 我：&#96;Vue3.0&#96;才有啊，咋，咱要升级&#96;Vue&#96;?</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>然后技术大佬就不理我了,并向我扔过来一段代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    this.chart &#x3D; echarts.init(this.$el)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    window.addEventListener(&#39;resize&#39;, this.$_handleResizeChart)</span><br><span class="line">    </span><br><span class="line">    this.$once(&#39;hook:beforeDestroy&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">      window.removeEventListener(&#39;resize&#39;, this.$_handleResizeChart)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  updated() &#123;&#125;,</span><br><span class="line">  created() &#123;&#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    $_handleResizeChart() &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>看完代码，恍然大悟，大佬不愧是大佬，原来<code>Vue</code>还可以这样监听生命周期函数。</p>
+<p><em>在<code>Vue</code>组件中，可以用过<code>$on</code>,<code>$once</code>去监听所有的生命周期钩子函数，如监听组件的<code>updated</code>钩子函数可以写成 <code>this.$on(&#39;hook:updated&#39;, () =&gt; &#123;&#125;)</code></em></p>
+<h4 id="2-外部监听生命周期函数"><a href="#2-外部监听生命周期函数" class="headerlink" title="2. 外部监听生命周期函数"></a>2. 外部监听生命周期函数</h4><p>今天同事在公司群里问，想在外部监听组件的生命周期函数，有没有办法啊？</p>
+<p>为什么会有这样的需求呢，原来同事用了一个第三方组件，需要监听第三方组件数据的变化，但是组件又没有提供<code>change</code>事件，同事也没办法了，才想出来要去在外部监听组件的<code>updated</code>钩子函数。查看了一番资料，发现<code>Vue</code>支持在外部监听组件的生命周期钩子函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  &lt;custom-select @hook:updated&#x3D;&quot;$_handleSelectUpdated&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import CustomSelect from &#39;..&#x2F;components&#x2F;custom-select&#39;</span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    CustomSelect</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    $_handleSelectUpdated() &#123;</span><br><span class="line">      console.log(&#39;custom-select组件的updated钩子函数被触发&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>❝</p>
+<h3 id="小项目还用Vuex-用Vue-observable手写一个状态管理吧"><a href="#小项目还用Vuex-用Vue-observable手写一个状态管理吧" class="headerlink" title="小项目还用Vuex?用Vue.observable手写一个状态管理吧"></a>小项目还用<code>Vuex</code>?用<code>Vue.observable</code>手写一个状态管理吧</h3><p>❞</p>
+</blockquote>
+<p>在前端项目中，有许多数据需要在各个组件之间进行传递共享，这时候就需要有一个状态管理工具，一般情况下，我们都会使用<code>Vuex</code>，但对于小型项目来说，就像<code>Vuex</code>官网所说：“如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex”。这时候我们就可以使用<code>Vue2.6</code>提供的新API <code>Vue.observable</code>手动打造一个<code>Vuex</code></p>
+<h4 id="创建-store"><a href="#创建-store" class="headerlink" title="创建 store"></a>创建 <code>store</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export const store &#x3D; Vue.observable(&#123;</span><br><span class="line">  userInfo: &#123;&#125;,</span><br><span class="line">  roleIds: []</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export const mutations &#x3D; &#123;</span><br><span class="line">  setUserInfo(userInfo) &#123;</span><br><span class="line">    store.userInfo &#x3D; userInfo</span><br><span class="line">  &#125;,</span><br><span class="line">  setRoleIds(roleIds) &#123;</span><br><span class="line">    store.roleIds &#x3D; roleIds</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="在组件中引用"><a href="#在组件中引用" class="headerlink" title="在组件中引用"></a>在组件中引用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;&#123; userInfo.name &#125;&#125;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; store, mutations &#125; from &#39;..&#x2F;store&#39;</span><br><span class="line">export default &#123;</span><br><span class="line">  computed: &#123;</span><br><span class="line">    userInfo() &#123;</span><br><span class="line">      return store.userInfo</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    mutations.setUserInfo(&#123;</span><br><span class="line">      name: &#39;子君&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>❝</p>
+<h3 id="开发全局组件，你可能需要了解一下Vue-extend"><a href="#开发全局组件，你可能需要了解一下Vue-extend" class="headerlink" title="开发全局组件，你可能需要了解一下Vue.extend"></a>开发全局组件，你可能需要了解一下<code>Vue.extend</code></h3><p>❞</p>
+</blockquote>
+<p><code>Vue.extend</code>是一个全局Api,平时我们在开发业务的时候很少会用到它，但有时候我们希望可以开发一些全局组件比如<code>Loading</code>,<code>Notify</code>,<code>Message</code>等组件时，这时候就可以使用<code>Vue.extend</code>。</p>
+<p>同学们在使用<code>element-ui</code>的<code>loading</code>时，在代码中可能会这样写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const loading &#x3D; this.$loading()</span><br><span class="line"></span><br><span class="line">loading.close()</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>这样写可能没什么特别的，但是如果你这样写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const loading &#x3D; this.$loading()</span><br><span class="line">const loading1 &#x3D; this.$loading()</span><br><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">  loading.close()</span><br><span class="line">&#125;, 1000 * 3)</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>这时候你会发现，我调用了两次loading,但是只出现了一个，而且我只关闭了<code>loading</code>，但是<code>loading1</code>也被关闭了。这是怎么实现的呢？我们现在就是用<code>Vue.extend</code> + 单例模式去实现一个<code>loading</code></p>
+<h4 id="开发loading组件"><a href="#开发loading组件" class="headerlink" title="开发loading组件"></a>开发<code>loading</code>组件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;transition name&#x3D;&quot;custom-loading-fade&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;div v-show&#x3D;&quot;visible&quot; class&#x3D;&quot;custom-loading-mask&quot;&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;div class&#x3D;&quot;custom-loading-spinner&quot;&gt;</span><br><span class="line">        &lt;i class&#x3D;&quot;custom-spinner-icon&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;p class&#x3D;&quot;custom-loading-text&quot;&gt;&#123;&#123; text &#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;transition&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">  </span><br><span class="line">    visible: &#123;</span><br><span class="line">      type: Boolean,</span><br><span class="line">      default: false</span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">    text: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      default: &#39;&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>开发出来<code>loading</code>组件之后，如果需要直接使用，就要这样去用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;component-code&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;custom-loading :visible&#x3D;&quot;visible&quot; text&#x3D;&quot;加载中&quot; &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      visible: false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>但这样使用并不能满足我们的需求</p>
+<ol>
+<li><p>可以通过js直接调用方法来显示关闭</p>
+</li>
+<li><p><code>loading</code>可以将整个页面全部遮罩起来</p>
+</li>
+</ol>
+<h4 id="通过Vue-extend将组件转换为全局组件"><a href="#通过Vue-extend将组件转换为全局组件" class="headerlink" title="通过Vue.extend将组件转换为全局组件"></a>通过<code>Vue.extend</code>将组件转换为全局组件</h4><h5 id="1-改造loading组件，将组件的props改为data"><a href="#1-改造loading组件，将组件的props改为data" class="headerlink" title="1. 改造loading组件，将组件的props改为data"></a>1. 改造<code>loading</code>组件，将组件的<code>props</code>改为<code>data</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      text: &#39;&#39;,</span><br><span class="line">      visible: false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-通过Vue-extend改造组件"><a href="#2-通过Vue-extend改造组件" class="headerlink" title="2. 通过Vue.extend改造组件"></a>2. 通过<code>Vue.extend</code>改造组件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import LoadingComponent from &#39;.&#x2F;loading.vue&#39;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const LoadingConstructor &#x3D; Vue.extend(LoadingComponent)</span><br><span class="line"></span><br><span class="line">let loading &#x3D; undefined</span><br><span class="line"></span><br><span class="line">LoadingConstructor.prototype.close &#x3D; function() &#123;</span><br><span class="line">  </span><br><span class="line">  if (loading) &#123;</span><br><span class="line">    loading &#x3D; undefined</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  this.visible &#x3D; false</span><br><span class="line">  </span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    </span><br><span class="line">    if (this.$el &amp;&amp; this.$el.parentNode) &#123;</span><br><span class="line">      this.$el.parentNode.removeChild(this.$el)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    this.$destroy()</span><br><span class="line">  &#125;, 300)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const Loading &#x3D; (options &#x3D; &#123;&#125;) &#x3D;&gt; &#123;</span><br><span class="line">  </span><br><span class="line">  if (loading) &#123;</span><br><span class="line">    return loading</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  const parent &#x3D; document.body</span><br><span class="line">  </span><br><span class="line">  const opts &#x3D; &#123;</span><br><span class="line">    text: &#39;&#39;,</span><br><span class="line">    ...options</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  const instance &#x3D; new LoadingConstructor(&#123;</span><br><span class="line">    el: document.createElement(&#39;div&#39;),</span><br><span class="line">    data: opts</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  parent.appendChild(instance.$el)</span><br><span class="line">  </span><br><span class="line">  Vue.nextTick(() &#x3D;&gt; &#123;</span><br><span class="line">    instance.visible &#x3D; true</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  loading &#x3D; instance</span><br><span class="line">  return instance</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default Loading</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-在页面使用loading"><a href="#3-在页面使用loading" class="headerlink" title="3. 在页面使用loading"></a>3. 在页面使用loading</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import Loading from &#39;.&#x2F;loading&#x2F;index.js&#39;</span><br><span class="line">export default &#123;</span><br><span class="line">  created() &#123;</span><br><span class="line">    const loading &#x3D; Loading(&#123; text: &#39;正在加载。。。&#39; &#125;)</span><br><span class="line">    </span><br><span class="line">    setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">      loading.close()</span><br><span class="line">    &#125;, 3000)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>通过上面的改造，loading已经可以在全局使用了，如果需要像<code>element-ui</code>一样挂载到<code>Vue.prototype</code>上面，通过<code>this.$loading</code>调用，还需要改造一下</p>
+<h4 id="将组件挂载到Vue-prototype上面"><a href="#将组件挂载到Vue-prototype上面" class="headerlink" title="将组件挂载到Vue.prototype上面"></a>将组件挂载到<code>Vue.prototype</code>上面</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.prototype.$loading &#x3D; Loading</span><br><span class="line">&#x2F;&#x2F; 在export之前将Loading方法进行绑定</span><br><span class="line">export default Loading</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 在组件内使用</span><br><span class="line">this.$loading()</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>❝</p>
+<h3 id="自定义指令，从底层解决问题"><a href="#自定义指令，从底层解决问题" class="headerlink" title="自定义指令，从底层解决问题"></a>自定义指令，从底层解决问题</h3><p>❞</p>
+</blockquote>
+<p>什么是指令？指令就是你女朋友指着你说，“那边搓衣板，跪下，这是命令！”。开玩笑啦，程序员哪里会有女朋友。</p>
+<p>通过上一节我们开发了一个<code>loading</code>组件，开发完之后，其他开发在使用的时候又提出来了两个需求</p>
+<ol>
+<li><p>可以将<code>loading</code>挂载到某一个元素上面，现在只能是全屏使用</p>
+</li>
+<li><p>可以使用指令在指定的元素上面挂载<code>loading</code></p>
+</li>
+</ol>
+<p>有需求，咱就做，没话说</p>
+<h4 id="开发v-loading指令"><a href="#开发v-loading指令" class="headerlink" title="开发v-loading指令"></a>开发<code>v-loading</code>指令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import LoadingComponent from &#39;.&#x2F;loading&#39;</span><br><span class="line"></span><br><span class="line">const LoadingContructor &#x3D; Vue.extend(LoadingComponent)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Vue.directive(&#39;loading&#39;, &#123;</span><br><span class="line">  复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="在元素上面使用指令"><a href="#在元素上面使用指令" class="headerlink" title="在元素上面使用指令"></a>在元素上面使用指令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div v-loading&#x3D;&quot;visible&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      visible: false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    this.visible &#x3D; true</span><br><span class="line">    fetch().then(() &#x3D;&gt; &#123;</span><br><span class="line">      this.visible &#x3D; false</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="项目中哪些场景可以自定义指令"><a href="#项目中哪些场景可以自定义指令" class="headerlink" title="项目中哪些场景可以自定义指令"></a>项目中哪些场景可以自定义指令</h4><ol>
+<li><p>为组件添加<code>loading</code>效果</p>
+</li>
+<li><p>按钮级别权限控制 <code>v-permission</code></p>
+</li>
+<li><p>代码埋点,根据操作类型定义指令</p>
+</li>
+<li><p>input输入框自动获取焦点</p>
+</li>
+<li><p>其他等等。。。</p>
+</li>
+</ol>
+<hr>
+<blockquote>
+<p>❝</p>
+<h3 id="深度watch与watch立即触发回调-我可以监听到你的一举一动"><a href="#深度watch与watch立即触发回调-我可以监听到你的一举一动" class="headerlink" title="深度watch与watch立即触发回调,我可以监听到你的一举一动"></a>深度<code>watch</code>与<code>watch</code>立即触发回调,我可以监听到你的一举一动</h3><p>❞</p>
+</blockquote>
+<p>在开发Vue项目时，我们会经常性的使用到<code>watch</code>去监听数据的变化，然后在变化之后做一系列操作。</p>
+<h4 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h4><p>比如一个列表页，我们希望用户在搜索框输入搜索关键字的时候，可以自动触发搜索,此时除了监听搜索框的<code>change</code>事件之外，我们也可以通过<code>watch</code>监听搜索关键字的变化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;span&gt;搜索&lt;&#x2F;span&gt;</span><br><span class="line">      &lt;input v-model&#x3D;&quot;searchValue&quot; &#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    </span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      searchValue: &#39;&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    </span><br><span class="line">    searchValue(newValue, oldValue) &#123;</span><br><span class="line">      </span><br><span class="line">      if (newValue !&#x3D;&#x3D; oldValue) &#123;</span><br><span class="line">        this.$_loadData()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    $_loadData() &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="立即触发"><a href="#立即触发" class="headerlink" title="立即触发"></a>立即触发</h4><p>通过上面的代码，现在已经可以在值发生变化的时候触发加载数据了，但是如果要在页面初始化时候加载数据，我们还需要在<code>created</code>或者<code>mounted</code>生命周期钩子里面再次调用<code>$_loadData</code>方法。不过，现在可以不用这样写了，通过配置<code>watch</code>的立即触发属性，就可以满足需求了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  watch: &#123;</span><br><span class="line">    </span><br><span class="line">    searchValue: &#123;</span><br><span class="line">    </span><br><span class="line">      handler(newValue, oldValue) &#123;</span><br><span class="line">        if (newValue !&#x3D;&#x3D; oldValue) &#123;</span><br><span class="line">          this.$_loadData()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      </span><br><span class="line">      immediate: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="深度监听（我可以看到你内心的一举一动）"><a href="#深度监听（我可以看到你内心的一举一动）" class="headerlink" title="深度监听（我可以看到你内心的一举一动）"></a>深度监听（我可以看到你内心的一举一动）</h4><p>一个表单页面，需求希望用户在修改表单的任意一项之后，表单页面就需要变更为被修改状态。如果按照上例中<code>watch</code>的写法，那么我们就需要去监听表单每一个属性，太麻烦了，这时候就需要用到<code>watch</code>的深度监听<code>deep</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      formData: &#123;</span><br><span class="line">        name: &#39;&#39;,</span><br><span class="line">        sex: &#39;&#39;,</span><br><span class="line">        age: 0,</span><br><span class="line">        deptId: &#39;&#39;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    </span><br><span class="line">    formData: &#123;</span><br><span class="line">      </span><br><span class="line">      handler(newValue, oldValue) &#123;</span><br><span class="line">        </span><br><span class="line">      &#125;,</span><br><span class="line">      </span><br><span class="line">      deep: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="随时监听，随时取消，了解一下-watch"><a href="#随时监听，随时取消，了解一下-watch" class="headerlink" title="随时监听，随时取消，了解一下$watch"></a>随时监听，随时取消，了解一下<code>$watch</code></h4><p>有这样一个需求，有一个表单，在编辑的时候需要监听表单的变化，如果发生变化则保存按钮启用，否则保存按钮禁用。这时候对于新增表单来说，可以直接通过<code>watch</code>去监听表单数据(假设是<code>formData</code>),如上例所述，但对于编辑表单来说，表单需要回填数据，这时候会修改<code>formData</code>的值，会触发<code>watch</code>,无法准确的判断是否启用保存按钮。现在你就需要了解一下<code>$watch</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      formData: &#123;</span><br><span class="line">        name: &#39;&#39;,</span><br><span class="line">        age: 0</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    this.$_loadData()</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    </span><br><span class="line">    $_loadData() &#123;</span><br><span class="line">      setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">        </span><br><span class="line">        this.formData &#x3D; &#123;</span><br><span class="line">          name: &#39;子君&#39;,</span><br><span class="line">          age: 18</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        const unwatch &#x3D; this.$watch(</span><br><span class="line">          &#39;formData&#39;,</span><br><span class="line">          () &#x3D;&gt; &#123;</span><br><span class="line">            console.log(&#39;数据发生了变化&#39;)</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            deep: true</span><br><span class="line">          &#125;</span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">          this.formData.name &#x3D; &#39;张三&#39;</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">      &#125;, 1000)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>根据上例可以看到，我们可以在需要的时候通过<code>this.$watch</code>来监听数据变化。那么如何取消监听呢，上例中<code>this.$watch</code>返回了一个值<code>unwatch</code>,是一个函数，在需要取消的时候，执行 <code>unwatch()</code>即可取消</p>
+<p>本文使用 <a target="_blank" rel="noopener" href="https://mdnice.com/">mdnice</a> 排版</p>
+<hr>
+<blockquote>
+<p>❝</p>
+<h3 id="函数式组件，函数是组件？"><a href="#函数式组件，函数是组件？" class="headerlink" title="函数式组件，函数是组件？"></a>函数式组件，函数是组件？</h3><p>❞</p>
+</blockquote>
+<p>什么是函数式组件？函数式组件就是函数是组件，感觉在玩文字游戏。使用过<code>React</code>的同学，应该不会对函数式组件感到陌生。函数式组件，我们可以理解为没有内部状态，没有生命周期钩子函数，没有<code>this</code>(不需要实例化的组件)。</p>
+<p>在日常写bug的过程中，经常会开发一些纯展示性的业务组件，比如一些详情页面，列表界面等，它们有一个共同的特点是只需要将外部传入的数据进行展现，不需要有内部状态，不需要在生命周期钩子函数里面做处理，这时候你就可以考虑使用函数式组件。</p>
+<h4 id="先来一个函数式组件的代码"><a href="#先来一个函数式组件的代码" class="headerlink" title="先来一个函数式组件的代码"></a>先来一个函数式组件的代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  </span><br><span class="line">  functional: true,</span><br><span class="line">  </span><br><span class="line">  props: &#123;</span><br><span class="line">    avatar: &#123;</span><br><span class="line">      type: String</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  复制代码</span><br></pre></td></tr></table></figure>
+
+<p>在上例中，我们定义了一个头像组件，如果外部传入头像，则显示传入的头像，否则显示默认头像。上面的代码中大家看到有一个render函数，这个是<code>Vue</code>使用<code>JSX</code>的写法，关于<code>JSX</code>,小编将在后续文章中会出详细的使用教程。</p>
+<h4 id="为什么使用函数式组件"><a href="#为什么使用函数式组件" class="headerlink" title="为什么使用函数式组件"></a>为什么使用函数式组件</h4><ol>
+<li><p>最主要最关键的原因是函数式组件不需要实例化，无状态，没有生命周期，所以渲染性能要好于普通组件</p>
+</li>
+<li><p>函数式组件结构比较简单，代码结构更清晰</p>
+</li>
+</ol>
+<h5 id="函数式组件与普通组件的区别"><a href="#函数式组件与普通组件的区别" class="headerlink" title="函数式组件与普通组件的区别"></a>函数式组件与普通组件的区别</h5><ol>
+<li><p>函数式组件需要在声明组件是指定functional</p>
+</li>
+<li><p>函数式组件不需要实例化，所以没有<code>this</code>,<code>this</code>通过<code>render</code>函数的第二个参数来代替</p>
+</li>
+<li><p>函数式组件没有生命周期钩子函数，不能使用计算属性，watch等等</p>
+</li>
+<li><p>函数式组件不能通过$emit对外暴露事件，调用事件只能通过<code>context.listeners.click</code>的方式调用外部传入的事件</p>
+</li>
+<li><p>因为函数式组件是没有实例化的，所以在外部通过<code>ref</code>去引用组件时，实际引用的是<code>HTMLElement</code></p>
+</li>
+<li><p>函数式组件的<code>props</code>可以不用显示声明，所以没有在<code>props</code>里面声明的属性都会被自动隐式解析为<code>prop</code>,而普通组件所有未声明的属性都被解析到<code>$attrs</code>里面，并自动挂载到组件根元素上面(可以通过<code>inheritAttrs</code>属性禁止)</p>
+</li>
+</ol>
+<h4 id="我不想用JSX，能用函数式组件吗？"><a href="#我不想用JSX，能用函数式组件吗？" class="headerlink" title="我不想用JSX，能用函数式组件吗？"></a>我不想用<code>JSX</code>，能用函数式组件吗？</h4><p>在<code>Vue2.5</code>之前，使用函数式组件只能通过<code>JSX</code>的方式，在之后，可以通过模板语法来生命函数式组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template functional&gt;</span><br><span class="line">  &lt;img :src&#x3D;&quot;props.avatar ? props.avatar : &#39;default-avatar.png&#39;&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li><p>支持缓存，只有依赖数据发生改变，才会重新进行计算</p>
 </li>
 <li><p>不支持异步，当computed内有异步操作时无效，无法监听数据的变化</p>
@@ -897,7 +1043,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiejieg.github.io/2020/09/07/vue-zong-jie/">https://jiejieg.github.io/2020/09/07/vue-zong-jie/</a>
+                    <a href="https://jiejieg.github.io/2020/09/11/vue-zong-jie/">https://jiejieg.github.io/2020/09/11/vue-zong-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -934,7 +1080,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1100,30 +1250,32 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/09/07/qian-duan-mian-shi-ti/">
+                <a href="/2020/09/11/vue-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="vue总结">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">vue总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            HTMLHTML语义化HTML语义化就是让页面内容结构化，它有如下优点
-123451、易于用户阅读，样式丢失的时候能让页面呈现清晰的结构。2、有利于SEO，搜索引擎根据标签来确定上下文和各个关键字的权重。3、方便其他设备解析，如盲人阅读器根
+                            史上最强vue总结~万字长文—面试开发全靠它了vue框架篇vue的优点轻量级框架：只关注视图层，是一个构建数据的视图集合，大小只有几十kb；
+简单易学：国人开发，中文文档，不存在语言障碍 ，易于理解和学习；
+双向数据绑定：保留了angula
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1131,6 +1283,15 @@
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1142,7 +1303,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/07/vue-ji-qiao/">
+                <a href="/2020/09/11/apply-call-bind111/">
                     <div class="card-image">
                         
                         
@@ -1154,13 +1315,14 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 内部监听生命周期函数今天产品经理又给我甩过来一个需求，需要开发一个图表，拿到需求，瞄了一眼，然后我就去echarts官网复制示例代码了，复制完改了改差不多了，改完代码长这样
-123456789101112131415161718192
+                            Function.prototype.apply()apply()方法调用一个具有给定this值的函数，以及一个数组（或类数组对象）的形式提供的参数。
+
+注意：call()方法的作用和apply()方法类似，区别就是call()方法接受的是
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-11
                             </span>
                         <span class="publish-author">
                             

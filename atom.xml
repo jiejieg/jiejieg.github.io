@@ -6,7 +6,7 @@
   <link href="https://jiejieg.github.io/atom.xml" rel="self"/>
   
   <link href="https://jiejieg.github.io/"/>
-  <updated>2020-03-22T03:50:48.279Z</updated>
+  <updated>2020-09-11T08:58:50.645Z</updated>
   <id>https://jiejieg.github.io/</id>
   
   <author>
@@ -17,95 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://jiejieg.github.io/2020/09/07/zu-jian-dong-tai-zhu-ce-ji-xuan-ran/"/>
-    <id>https://jiejieg.github.io/2020/09/07/zu-jian-dong-tai-zhu-ce-ji-xuan-ran/</id>
-    <published>2020-09-07T09:43:59.199Z</published>
-    <updated>2020-03-22T03:50:48.279Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;组件动态注册及渲染&quot;&gt;&lt;a href=&quot;#组件动态注册及渲染&quot; class=&quot;headerlink&quot; title=&quot;组件动态注册及渲染&quot;&gt;&lt;/a&gt;组件动态注册及渲染&lt;/h3&gt;&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://jiejieg.github.io/2020/09/07/shu-ju-jie-gou-gai-nian/"/>
-    <id>https://jiejieg.github.io/2020/09/07/shu-ju-jie-gou-gai-nian/</id>
-    <published>2020-09-07T09:43:59.197Z</published>
-    <updated>2020-09-02T07:00:14.532Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;数据结构概念&quot;&gt;&lt;a href=&quot;#数据结构概念&quot; class=&quot;headerlink&quot; title=&quot;数据结构概念&quot;&gt;&lt;/a&gt;数据结构概念&lt;/h2&gt;&lt;p&gt;数据结构是指相互之间存在着一种或多种关系的数据元素的集合和该集合中数据元素之间的关系组成</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://jiejieg.github.io/2020/09/07/shu-ru-url-hou-dao-ye-mian-xuan-ran-de-guo-cheng/"/>
-    <id>https://jiejieg.github.io/2020/09/07/shu-ru-url-hou-dao-ye-mian-xuan-ran-de-guo-cheng/</id>
-    <published>2020-09-07T09:43:59.195Z</published>
-    <updated>2020-09-07T09:31:33.322Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;浏览器的多进程架构&quot;&gt;&lt;a href=&quot;#浏览器的多进程架构&quot; class=&quot;headerlink&quot; title=&quot;浏览器的多进程架构&quot;&gt;&lt;/a&gt;浏览器的多进程架构&lt;/h3&gt;&lt;p&gt;从浏览器输入 &lt;code&gt;URL&lt;/code&gt; 到页面渲染的整个过程都是由</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://jiejieg.github.io/2020/09/07/qian-duan-mian-shi-ti/"/>
-    <id>https://jiejieg.github.io/2020/09/07/qian-duan-mian-shi-ti/</id>
-    <published>2020-09-07T09:43:59.193Z</published>
-    <updated>2020-08-10T09:29:43.394Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;HTML&quot;&gt;&lt;a href=&quot;#HTML&quot; class=&quot;headerlink&quot; title=&quot;HTML&quot;&gt;&lt;/a&gt;HTML&lt;/h2&gt;&lt;h3 id=&quot;HTML语义化&quot;&gt;&lt;a href=&quot;#HTML语义化&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://jiejieg.github.io/2020/09/07/vue-zong-jie/"/>
-    <id>https://jiejieg.github.io/2020/09/07/vue-zong-jie/</id>
-    <published>2020-09-07T09:43:59.191Z</published>
-    <updated>2020-07-20T01:16:34.470Z</updated>
+    <title>vue总结</title>
+    <link href="https://jiejieg.github.io/2020/09/11/vue-zong-jie/"/>
+    <id>https://jiejieg.github.io/2020/09/11/vue-zong-jie/</id>
+    <published>2020-09-11T08:58:43.000Z</published>
+    <updated>2020-09-11T08:58:50.645Z</updated>
     
     
       
@@ -119,14 +35,83 @@
     
     
     
+    <category term="vue" scheme="https://jiejieg.github.io/tags/vue/"/>
+    
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://jiejieg.github.io/2020/09/07/vue-ji-qiao/"/>
-    <id>https://jiejieg.github.io/2020/09/07/vue-ji-qiao/</id>
-    <published>2020-09-07T09:43:59.189Z</published>
-    <updated>2020-07-07T06:44:39.487Z</updated>
+    <link href="https://jiejieg.github.io/2020/09/11/apply-call-bind111/"/>
+    <id>https://jiejieg.github.io/2020/09/11/apply-call-bind111/</id>
+    <published>2020-09-11T08:57:24.590Z</published>
+    <updated>2020-09-11T08:57:26.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Function-prototype-apply&quot;&gt;&lt;a href=&quot;#Function-prototype-apply&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构</title>
+    <link href="https://jiejieg.github.io/2020/09/11/shu-ju-jie-gou/"/>
+    <id>https://jiejieg.github.io/2020/09/11/shu-ju-jie-gou/</id>
+    <published>2020-09-11T08:55:43.000Z</published>
+    <updated>2020-09-11T08:56:02.694Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据结构概念&quot;&gt;&lt;a href=&quot;#数据结构概念&quot; class=&quot;headerlink&quot; title=&quot;数据结构概念&quot;&gt;&lt;/a&gt;数据结构概念&lt;/h2&gt;&lt;p&gt;数据结构是指相互之间存在着一种或多种关系的数据元素的集合和该集合中数据元素之间的关系组成</summary>
+        
+      
+    
+    
+    
+    
+    <category term="数据结构" scheme="https://jiejieg.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>组件动态注册</title>
+    <link href="https://jiejieg.github.io/2020/09/11/zu-jian-dong-tai-zhu-ce/"/>
+    <id>https://jiejieg.github.io/2020/09/11/zu-jian-dong-tai-zhu-ce/</id>
+    <published>2020-09-11T08:54:43.000Z</published>
+    <updated>2020-09-11T08:55:14.813Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;组件动态注册及渲染&quot;&gt;&lt;a href=&quot;#组件动态注册及渲染&quot; class=&quot;headerlink&quot; title=&quot;组件动态注册及渲染&quot;&gt;&lt;/a&gt;组件动态注册及渲染&lt;/h3&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue" scheme="https://jiejieg.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue技巧</title>
+    <link href="https://jiejieg.github.io/2020/09/11/vue-ji-qiao/"/>
+    <id>https://jiejieg.github.io/2020/09/11/vue-ji-qiao/</id>
+    <published>2020-09-11T08:53:43.000Z</published>
+    <updated>2020-09-11T08:59:02.879Z</updated>
     
     
       
@@ -140,14 +125,16 @@
     
     
     
+    <category term="vue" scheme="https://jiejieg.github.io/tags/vue/"/>
+    
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://jiejieg.github.io/2020/09/07/typescript-ru-men/"/>
-    <id>https://jiejieg.github.io/2020/09/07/typescript-ru-men/</id>
-    <published>2020-09-07T09:43:59.187Z</published>
-    <updated>2020-07-20T05:41:53.389Z</updated>
+    <title>TypeScript入门</title>
+    <link href="https://jiejieg.github.io/2020/09/11/typescript-ru-men/"/>
+    <id>https://jiejieg.github.io/2020/09/11/typescript-ru-men/</id>
+    <published>2020-09-11T08:51:43.000Z</published>
+    <updated>2020-09-11T08:58:25.611Z</updated>
     
     
       
@@ -161,35 +148,85 @@
     
     
     
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://jiejieg.github.io/2020/09/07/javascripts-yun-xing-ji-zhi/"/>
-    <id>https://jiejieg.github.io/2020/09/07/javascripts-yun-xing-ji-zhi/</id>
-    <published>2020-09-07T09:43:59.179Z</published>
-    <updated>2020-07-07T07:54:55.729Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;JavaScripts运行机制&quot;&gt;&lt;a href=&quot;#JavaScripts运行机制&quot; class=&quot;headerlink&quot; title=&quot;JavaScripts运行机制&quot;&gt;&lt;/a&gt;JavaScripts运行机制&lt;/h2&gt;&lt;h2 id=&quot;大纲&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
+    <category term="TypeScript" scheme="https://jiejieg.github.io/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://jiejieg.github.io/2020/09/07/flex-bu-ju/"/>
-    <id>https://jiejieg.github.io/2020/09/07/flex-bu-ju/</id>
-    <published>2020-09-07T09:43:59.175Z</published>
-    <updated>2020-09-07T02:37:43.803Z</updated>
+    <title>输入url后到页面渲染的过程</title>
+    <link href="https://jiejieg.github.io/2020/09/11/shu-ru-url-hou-dao-ye-mian-xuan-ran-de-guo-cheng/"/>
+    <id>https://jiejieg.github.io/2020/09/11/shu-ru-url-hou-dao-ye-mian-xuan-ran-de-guo-cheng/</id>
+    <published>2020-09-11T08:49:20.000Z</published>
+    <updated>2020-09-11T08:50:22.671Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;浏览器的多进程架构&quot;&gt;&lt;a href=&quot;#浏览器的多进程架构&quot; class=&quot;headerlink&quot; title=&quot;浏览器的多进程架构&quot;&gt;&lt;/a&gt;浏览器的多进程架构&lt;/h3&gt;&lt;p&gt;从浏览器输入 &lt;code&gt;URL&lt;/code&gt; 到页面渲染的整个过程都是由</summary>
+        
+      
+    
+    
+    
+    
+    <category term="http" scheme="https://jiejieg.github.io/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端面试题</title>
+    <link href="https://jiejieg.github.io/2020/09/11/qian-duan-mian-shi-ti/"/>
+    <id>https://jiejieg.github.io/2020/09/11/qian-duan-mian-shi-ti/</id>
+    <published>2020-09-11T08:47:43.000Z</published>
+    <updated>2020-09-11T08:47:57.070Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;HTML&quot;&gt;&lt;a href=&quot;#HTML&quot; class=&quot;headerlink&quot; title=&quot;HTML&quot;&gt;&lt;/a&gt;HTML&lt;/h2&gt;&lt;h3 id=&quot;HTML语义化&quot;&gt;&lt;a href=&quot;#HTML语义化&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="面试" scheme="https://jiejieg.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>apply、call、bind</title>
+    <link href="https://jiejieg.github.io/2020/09/11/apply-call-bind/"/>
+    <id>https://jiejieg.github.io/2020/09/11/apply-call-bind/</id>
+    <published>2020-09-11T08:45:43.000Z</published>
+    <updated>2020-09-11T08:47:20.219Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Function-prototype-apply&quot;&gt;&lt;a href=&quot;#Function-prototype-apply&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="javascript" scheme="https://jiejieg.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>flex布局</title>
+    <link href="https://jiejieg.github.io/2020/09/08/flex-bu-ju/"/>
+    <id>https://jiejieg.github.io/2020/09/08/flex-bu-ju/</id>
+    <published>2020-09-08T07:07:14.000Z</published>
+    <updated>2020-09-08T07:08:07.843Z</updated>
     
     
       
@@ -202,6 +239,8 @@
     
     
     
+    
+    <category term="css" scheme="https://jiejieg.github.io/tags/css/"/>
     
   </entry>
   

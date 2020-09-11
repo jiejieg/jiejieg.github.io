@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML,CSS,JavaScript,JQuery,Vue.js等">
+    <meta name="keywords" content="flex布局, HTML,CSS,JavaScript,JQuery,Vue.js等">
     <meta name="description" content="专注Web，分享生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>guoer</title>
+    <title>flex布局 | guoer</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">flex布局</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/css/">
+                                <span class="chip bg-color">css</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -443,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-07
+                    2020-09-08
                 </div>
                 
 
@@ -699,7 +703,7 @@
 <li><p>单独设置flex-direction取值，比如</p>
 <ul>
 <li><pre><code class="css">flex-flow: row | column
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">*   单独设置flex-wrap取值</span><br><span class="line">    </span><br><span class="line">    *   &#96;&#96;&#96;css</span><br><span class="line">        flex-flow: wrap | nowrap | wrap-reverse</span><br></pre></td></tr></table></figure></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 单独设置flex-wrap取值</span><br><span class="line"></span><br><span class="line">  * &#96;&#96;&#96;css</span><br><span class="line">    flex-flow: wrap | nowrap | wrap-reverse</span><br></pre></td></tr></table></figure></code></pre>
 </li>
 </ul>
 </li>
@@ -707,7 +711,7 @@
 <ul>
 <li><pre><code class="css">flex-flow: row wrap
 flex-flow: column nowrap
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">        </span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br><span class="line">#### align-content</span><br><span class="line"></span><br><span class="line">这个属性是定义子容器在交叉轴的排列方式，也就是对齐方式。</span><br><span class="line"></span><br><span class="line">首先上一张图👇</span><br><span class="line"></span><br><span class="line">![](https:&#x2F;&#x2F;p3-juejin.byteimg.com&#x2F;tos-cn-i-k3u1fbpfcp&#x2F;e94951ca10cd4dc8bf74069ac13d6966~tplv-k3u1fbpfcp-zoom-1.image)</span><br><span class="line"></span><br><span class="line">根据这些取值，我们来看看布局效果吧👇</span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br><span class="line">#### align-content</span><br><span class="line"></span><br><span class="line">这个属性是定义子容器在交叉轴的排列方式，也就是对齐方式。</span><br><span class="line"></span><br><span class="line">首先上一张图👇</span><br><span class="line"></span><br><span class="line">![](https:&#x2F;&#x2F;p3-juejin.byteimg.com&#x2F;tos-cn-i-k3u1fbpfcp&#x2F;e94951ca10cd4dc8bf74069ac13d6966~tplv-k3u1fbpfcp-zoom-1.image)</span><br><span class="line"></span><br><span class="line">根据这些取值，我们来看看布局效果吧👇</span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 // 起始端对齐
 align-content: flex-start
 复制代码
@@ -773,7 +777,7 @@ align-content: center
 <ul>
 <li><pre><code>flex-direction：row | row-reverse
 复制代码
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">        </span><br><span class="line">    *   &#96;flex-basis&#96;设置的大小为宽度，并且会覆盖witdh值</span><br><span class="line">    </span><br><span class="line">*   当主轴为纵向时，即👇</span><br><span class="line">    </span><br><span class="line">    *   &#96;&#96;&#96;css</span><br><span class="line">        flex-direction：column | column-reverse</span><br></pre></td></tr></table></figure></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  * &#96;flex-basis&#96;设置的大小为宽度，并且会覆盖witdh值</span><br><span class="line"></span><br><span class="line">* 当主轴为纵向时，即👇</span><br><span class="line"></span><br><span class="line">  * &#96;&#96;&#96;css</span><br><span class="line">    flex-direction：column | column-reverse</span><br></pre></td></tr></table></figure></code></pre>
 </li>
 <li><p><code>flex-basis</code>设置的大小为高度，并且会覆盖height值</p>
 </li>
@@ -831,7 +835,7 @@ align-content: center
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiejieg.github.io/2020/09/07/flex-bu-ju/">https://jiejieg.github.io/2020/09/07/flex-bu-ju/</a>
+                    <a href="https://jiejieg.github.io/2020/09/08/flex-bu-ju/">https://jiejieg.github.io/2020/09/08/flex-bu-ju/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -868,7 +872,11 @@ align-content: center
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/css/">
+                                    <span class="chip bg-color">css</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1038,39 +1046,26 @@ align-content: center
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/07/javascripts-yun-xing-ji-zhi/">
+                <a href="/2020/09/11/apply-call-bind/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="apply、call、bind">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">apply、call、bind</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JavaScripts运行机制大纲
-区分进程和线程
+                            Function.prototype.apply()apply()方法调用一个具有给定this值的函数，以及一个数组（或类数组对象）的形式提供的参数。
 
-浏览器是多进程的
-
-浏览器都包含哪些进程？
-
-浏览器多进程的优势
-
-重点是浏览器内核（渲染进程）
-
-Browser进程和浏览器内核（Renderer进程）的通信过程
-
-
-
-梳理浏览器内核
+注意：call()方法的作用和apply()方法类似，区别就是call()方法接受的是
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-11
                         </span>
                         <span class="publish-author">
                             
@@ -1079,6 +1074,14 @@ Browser进程和浏览器内核（Renderer进程）的通信过程
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1090,13 +1093,13 @@ Browser进程和浏览器内核（Renderer进程）的通信过程
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/07/flex-bu-ju/">
+                <a href="/2020/09/08/flex-bu-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="flex布局">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">flex布局</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1109,7 +1112,7 @@ flex布局在某种程度上，简便我们布局的一个难题，接下来的�
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-08
                             </span>
                         <span class="publish-author">
                             
@@ -1120,6 +1123,14 @@ flex布局在某种程度上，简便我们布局的一个难题，接下来的�
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
